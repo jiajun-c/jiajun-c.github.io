@@ -6,7 +6,7 @@
   <link href="http://www.halfstar.top/atom.xml" rel="self"/>
   
   <link href="http://www.halfstar.top/"/>
-  <updated>2022-03-02T14:30:17.702Z</updated>
+  <updated>2022-03-02T15:14:36.825Z</updated>
   <id>http://www.halfstar.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>objdump</title>
+    <link href="http://www.halfstar.top/2022/03/02/objdump/"/>
+    <id>http://www.halfstar.top/2022/03/02/objdump/</id>
+    <published>2022-03-02T14:13:02.000Z</published>
+    <updated>2022-03-02T15:14:36.825Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="liunx下反汇编"><a href="#liunx下反汇编" class="headerlink" title="liunx下反汇编"></a>liunx下反汇编</h1><p>在linux下的反汇编我们主要是使用objdump，其实也可以在我们的gdb下面对我们需要的section进行反汇编</p><ul><li>-f 显示文件头信息</li><li>-D 反汇编所有section (-d反汇编特定section)</li><li>-h 显示目标文件各个section的头部摘要信息</li><li>-x 显示所有可用的头信息，包括符号表、重定位入口。-x 等价于 -a -f -h -r -t 同时指定。</li><li>-i 显示对于 -b 或者 -m 选项可用的架构和目标格式列表。</li><li>-r 显示文件的重定位入口。如果和-d或者-D一起使用，重定位部分以反汇编后的格式显示出来。</li><li>-R 显示文件的动态重定位入口，仅仅对于动态目标文件有意义，比如某些共享库。</li><li>-S 尽可能反汇编出源代码，尤其当编译的时候指定了-g这种调试参数时，效果比较明显。隐含了-d参数。</li><li>-t 显示文件的符号表入口。类似于nm -s提供的信息</li></ul><h2 id="查看机器的大小端"><a href="#查看机器的大小端" class="headerlink" title="查看机器的大小端"></a>查看机器的大小端</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">objdump -i  </span><br></pre></td></tr></table></figure><h2 id="进行反汇编"><a href="#进行反汇编" class="headerlink" title="进行反汇编"></a>进行反汇编</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">objdump -d main.o </span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">start debug in the linux</summary>
+    
+    
+    
+    <category term="linux" scheme="http://www.halfstar.top/categories/linux/"/>
+    
+    
+    <category term="linux" scheme="http://www.halfstar.top/tags/linux/"/>
+    
+    <category term="assemble" scheme="http://www.halfstar.top/tags/assemble/"/>
+    
+  </entry>
   
   <entry>
     <title>gdb.md</title>
