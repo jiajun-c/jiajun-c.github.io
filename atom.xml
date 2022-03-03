@@ -6,7 +6,7 @@
   <link href="http://www.halfstar.top/atom.xml" rel="self"/>
   
   <link href="http://www.halfstar.top/"/>
-  <updated>2022-03-02T15:14:36.825Z</updated>
+  <updated>2022-03-03T09:07:03.380Z</updated>
   <id>http://www.halfstar.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>k点最短路</title>
+    <link href="http://www.halfstar.top/2022/03/03/k/"/>
+    <id>http://www.halfstar.top/2022/03/03/k/</id>
+    <published>2022-03-03T08:05:07.000Z</published>
+    <updated>2022-03-03T09:07:03.380Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="K点最短路"><a href="#K点最短路" class="headerlink" title="K点最短路"></a>K点最短路</h1><p>在OI中,有一类经典的问题叫做经过K点的最短路径, 解题的思路大致是利用flyod和之前我们学习过的广义矩阵乘法, 矩阵快速幂</p><h2 id="1-分析"><a href="#1-分析" class="headerlink" title="1. 分析"></a>1. 分析</h2><p>对于K点的最短路, 我们可以当作是一个传递闭包进行处理,k一定是可以被分解为是2的 $k_i$ 次方的相加, 如果一个传递闭包的级数为k,另外一个的级数为p,那么将这两个相称得到的就是进行k+p次的闭包</p><p>我们可以将最短路同理为闭包, K级就意味着在k个点上的最短路径, k+p则是他们和的点数的最短路径, 对于这个闭包运算的实现, 我们可以使用广义矩阵乘法</p><h2 id="2-代码"><a href="#2-代码" class="headerlink" title="2 代码"></a>2 代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 520</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> dp[N][N], vis[<span class="number">1001000</span>];</span><br><span class="line"><span class="type">int</span> n,t,s,e,cnt;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">matrix</span> &#123;</span><br><span class="line">    <span class="type">int</span> dis[N][N];</span><br><span class="line">    matrix <span class="keyword">operator</span>*(<span class="type">const</span> matrix&amp;x) <span class="type">const</span> &#123;</span><br><span class="line">        matrix c;</span><br><span class="line">        <span class="built_in">memset</span>(c.dis,<span class="number">0x3f</span>,<span class="keyword">sizeof</span> c.dis);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">1</span>; k &lt;= cnt; k++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= cnt; i++)</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= cnt; j++)</span><br><span class="line">                    c.dis[i][j] = <span class="built_in">min</span>(c.dis[i][j], dis[i][k] + x.dis[k][j]);</span><br><span class="line">        <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;now,ans;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(now.dis,<span class="number">0x3f</span>,<span class="built_in">sizeof</span>(now.dis));</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d%d&quot;</span>,&amp;n,&amp;t,&amp;s,&amp;e);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>;i &lt;= t;i++) &#123;</span><br><span class="line">        <span class="type">int</span> x,y,d;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>,&amp;d,&amp;x,&amp;y);</span><br><span class="line">        <span class="keyword">if</span>(!vis[x]) &#123;vis[x] = ++cnt;&#125;</span><br><span class="line">        <span class="keyword">if</span>(!vis[y]) &#123;vis[y] = ++cnt;&#125;</span><br><span class="line">        now.dis[vis[x]][vis[y]] = now.dis[vis[y]][vis[x]] = d;</span><br><span class="line">    &#125;</span><br><span class="line">    n--;</span><br><span class="line">    ans = now;</span><br><span class="line">    <span class="keyword">while</span> (n) &#123;</span><br><span class="line">        <span class="keyword">if</span>(n&amp;<span class="number">1</span>) ans = ans*now;</span><br><span class="line">        now = now*now;</span><br><span class="line">        n &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,ans.dis[vis[s]][vis[e]]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;K点最短路&quot;&gt;&lt;a href=&quot;#K点最短路&quot; class=&quot;headerlink&quot; title=&quot;K点最短路&quot;&gt;&lt;/a&gt;K点最短路&lt;/h1&gt;&lt;p&gt;在OI中,有一类经典的问题叫做经过K点的最短路径, 解题的思路大致是利用flyod和之前我们学习过的广义矩阵乘法, </summary>
+      
+    
+    
+    
+    <category term="ACM" scheme="http://www.halfstar.top/categories/ACM/"/>
+    
+    
+    <category term="图论" scheme="http://www.halfstar.top/tags/%E5%9B%BE%E8%AE%BA/"/>
+    
+    <category term="最短路" scheme="http://www.halfstar.top/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>objdump</title>
