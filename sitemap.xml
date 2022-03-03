@@ -79,20 +79,6 @@
   </url>
   
   <url>
-    <loc>http://www.halfstar.top/tags/gdb/</loc>
-    <lastmod>2022-03-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.halfstar.top/tags/debug/</loc>
-    <lastmod>2022-03-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://www.halfstar.top/tags/%E5%9B%BE%E8%AE%BA/</loc>
     <lastmod>2022-03-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -101,6 +87,20 @@
   
   <url>
     <loc>http://www.halfstar.top/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/</loc>
+    <lastmod>2022-03-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.halfstar.top/tags/gdb/</loc>
+    <lastmod>2022-03-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.halfstar.top/tags/debug/</loc>
     <lastmod>2022-03-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -123,14 +123,14 @@
   </url>
   
   <url>
-    <loc>http://www.halfstar.top/categories/linux/</loc>
+    <loc>http://www.halfstar.top/categories/ACM/</loc>
     <lastmod>2022-03-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://www.halfstar.top/categories/ACM/</loc>
+    <loc>http://www.halfstar.top/categories/linux/</loc>
     <lastmod>2022-03-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
