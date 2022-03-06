@@ -6,7 +6,7 @@
   <link href="http://www.halfstar.top/atom.xml" rel="self"/>
   
   <link href="http://www.halfstar.top/"/>
-  <updated>2022-03-03T09:07:03.380Z</updated>
+  <updated>2022-03-06T10:32:08.899Z</updated>
   <id>http://www.halfstar.top/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>组合数</title>
+    <link href="http://www.halfstar.top/2022/03/06/%E7%BB%84%E5%90%88%E6%95%B0/"/>
+    <id>http://www.halfstar.top/2022/03/06/%E7%BB%84%E5%90%88%E6%95%B0/</id>
+    <published>2022-03-05T21:30:11.000Z</published>
+    <updated>2022-03-06T10:32:08.899Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;组合数&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#组合数&quot;&gt;&lt;/a&gt; 组合数&lt;/h1&gt;
+&lt;h2 id=&quot;1whats-this&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="ACM" scheme="http://www.halfstar.top/categories/ACM/"/>
+    
+    
+    <category term="-数论" scheme="http://www.halfstar.top/tags/%E6%95%B0%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>折半查找</title>
+    <link href="http://www.halfstar.top/2022/03/03/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE/"/>
+    <id>http://www.halfstar.top/2022/03/03/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE/</id>
+    <published>2022-03-03T11:20:41.000Z</published>
+    <updated>2022-03-03T12:22:13.100Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;meet-in-middle&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#meet-in-middle&quot;&gt;&lt;/a&gt; Meet In middle&lt;/h1&gt;
+&lt;p&gt;&lt;span class=&quot;katex&quot;&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="ACM" scheme="http://www.halfstar.top/categories/ACM/"/>
+    
+    
+    <category term="搜索" scheme="http://www.halfstar.top/tags/%E6%90%9C%E7%B4%A2/"/>
+    
+    <category term="二分" scheme="http://www.halfstar.top/tags/%E4%BA%8C%E5%88%86/"/>
+    
+  </entry>
   
   <entry>
     <title>k点最短路</title>
@@ -28,7 +82,8 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;K点最短路&quot;&gt;&lt;a href=&quot;#K点最短路&quot; class=&quot;headerlink&quot; title=&quot;K点最短路&quot;&gt;&lt;/a&gt;K点最短路&lt;/h1&gt;&lt;p&gt;在OI中,有一类经典的问题叫做经过K点的最短路径, 解题的思路大致是利用flyod和之前我们学习过的广义矩阵乘法,</summary>
+    <summary type="html">&lt;h1 id=&quot;k点最短路&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#k点最短路&quot;&gt;&lt;/a&gt; K点最短路&lt;/h1&gt;
+&lt;p&gt;在OI中,有一类经典的问题叫做经过K点的最短路径, 解题的思路大致是利用flyod和之前我们学习过的广义矩阵乘法,</summary>
         
       
     
@@ -97,8 +152,9 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;Data-lab&quot;&gt;&lt;a href=&quot;#Data-lab&quot; class=&quot;headerlink&quot; title=&quot;Data lab&quot;&gt;&lt;/a&gt;Data lab&lt;/h1&gt;&lt;p&gt;鸽&lt;/p&gt;
-&lt;h1 id=&quot;Bomb-lab&quot;&gt;&lt;a href=&quot;#Bomb-lab&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;data-lab&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#data-lab&quot;&gt;&lt;/a&gt; Data lab&lt;/h1&gt;
+&lt;p&gt;鸽&lt;/p&gt;
+&lt;h1 id=&quot;bomb-lab&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
         
       
     
