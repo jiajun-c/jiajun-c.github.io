@@ -6,7 +6,7 @@
   <link href="http://www.halfstar.top/atom.xml" rel="self"/>
   
   <link href="http://www.halfstar.top/"/>
-  <updated>2022-03-21T10:33:18.501Z</updated>
+  <updated>2022-03-24T14:50:41.766Z</updated>
   <id>http://www.halfstar.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ctrl c v in linux</title>
+    <link href="http://www.halfstar.top/2022/03/24/cv/"/>
+    <id>http://www.halfstar.top/2022/03/24/cv/</id>
+    <published>2022-03-24T13:17:03.000Z</published>
+    <updated>2022-03-24T14:50:41.766Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;how-to-ctrl-c-v-in-the-vim&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#how-to-ctrl-c-v-in-the-vim&quot;&gt;&lt;/a&gt; How to ctrl-c-v in the</summary>
+        
+      
+    
+    
+    
+    <category term="lab" scheme="http://www.halfstar.top/categories/lab/"/>
+    
+    
+    <category term="linux" scheme="http://www.halfstar.top/tags/linux/"/>
+    
+    <category term="vim" scheme="http://www.halfstar.top/tags/vim/"/>
+    
+  </entry>
   
   <entry>
     <title>linux配置指南</title>
