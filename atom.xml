@@ -6,7 +6,7 @@
   <link href="http://www.halfstar.top/atom.xml" rel="self"/>
   
   <link href="http://www.halfstar.top/"/>
-  <updated>2022-03-30T15:34:46.023Z</updated>
+  <updated>2022-06-07T15:35:01.120Z</updated>
   <id>http://www.halfstar.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ln command</title>
+    <link href="http://www.halfstar.top/2022/05/30/curl/"/>
+    <id>http://www.halfstar.top/2022/05/30/curl/</id>
+    <published>2022-05-30T12:08:16.000Z</published>
+    <updated>2022-06-07T15:35:01.120Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;the-curl-method&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#the-curl-method&quot;&gt;&lt;/a&gt; The curl</summary>
+        
+      
+    
+    
+    
+    <category term="linux" scheme="http://www.halfstar.top/categories/linux/"/>
+    
+    
+    <category term="command" scheme="http://www.halfstar.top/tags/command/"/>
+    
+  </entry>
   
   <entry>
     <title>ln command</title>
