@@ -6,7 +6,7 @@
   <link href="http://www.halfstar.top/atom.xml" rel="self"/>
   
   <link href="http://www.halfstar.top/"/>
-  <updated>2022-06-08T03:04:21.433Z</updated>
+  <updated>2022-06-08T23:31:34.278Z</updated>
   <id>http://www.halfstar.top/</id>
   
   <author>
@@ -15,6 +15,100 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://www.halfstar.top/2022/06/09/Untitled/"/>
+    <id>http://www.halfstar.top/2022/06/09/Untitled/</id>
+    <published>2022-06-08T23:31:34.278Z</published>
+    <updated>2022-06-08T23:31:34.278Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>计算机组成原理(1) - 计算机系统概述</title>
+    <link href="http://www.halfstar.top/2022/06/01/chapter1/"/>
+    <id>http://www.halfstar.top/2022/06/01/chapter1/</id>
+    <published>2022-06-01T12:08:16.000Z</published>
+    <updated>2022-06-08T23:34:30.893Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;性能指标&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#性能指标&quot;&gt;&lt;/a&gt; 性能指标&lt;/h1&gt;
+&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&quot;时钟周期&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="计算机组成原理" scheme="http://www.halfstar.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
+    
+    
+    <category term="command" scheme="http://www.halfstar.top/tags/command/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机组成原理(2) - 数据信息的表示</title>
+    <link href="http://www.halfstar.top/2022/06/01/chapter2/"/>
+    <id>http://www.halfstar.top/2022/06/01/chapter2/</id>
+    <published>2022-06-01T12:08:16.000Z</published>
+    <updated>2022-06-08T23:34:49.713Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;数据信息的表示&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#数据信息的表示&quot;&gt;&lt;/a&gt; 数据信息的表示&lt;/h1&gt;
+&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&quot;数值数据的表示&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="计算机组成原理" scheme="http://www.halfstar.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
+    
+    
+    <category term="command" scheme="http://www.halfstar.top/tags/command/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机组成原理(4) - 存储系统</title>
+    <link href="http://www.halfstar.top/2022/06/01/chapter4/"/>
+    <id>http://www.halfstar.top/2022/06/01/chapter4/</id>
+    <published>2022-06-01T12:08:16.000Z</published>
+    <updated>2022-06-08T23:36:37.383Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;存储系统&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#存储系统&quot;&gt;&lt;/a&gt; 存储系统&lt;/h1&gt;
+&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&quot;一-存储器概述&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="计算机组成原理" scheme="http://www.halfstar.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
+    
+    
+    <category term="command" scheme="http://www.halfstar.top/tags/command/"/>
+    
+  </entry>
   
   <entry>
     <title>CSP 2022_3_20 题解</title>
