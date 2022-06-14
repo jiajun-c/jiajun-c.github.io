@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.halfstar.top/2022/05/30/csp_2021_12/</loc>
+    
+    <lastmod>2022-06-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.halfstar.top/2022/05/30/csp_2022_3/</loc>
+    
+    <lastmod>2022-06-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://www.halfstar.top/2022/06/13/mg/</loc>
     
     <lastmod>2022-06-14</lastmod>
@@ -14,15 +32,6 @@
     <loc>http://www.halfstar.top/2022/06/10/lab0/</loc>
     
     <lastmod>2022-06-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.halfstar.top/2022/06/09/csp_2021_12/</loc>
-    
-    <lastmod>2022-06-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -56,25 +65,7 @@
   </url>
   
   <url>
-    <loc>http://www.halfstar.top/2022/06/09/Untitled/</loc>
-    
-    <lastmod>2022-06-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://www.halfstar.top/about/index.html</loc>
-    
-    <lastmod>2022-06-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.halfstar.top/2022/05/30/csp_2022_3/</loc>
     
     <lastmod>2022-06-08</lastmod>
     
@@ -224,6 +215,13 @@
   
   <url>
     <loc>http://www.halfstar.top/tags/cs/</loc>
+    <lastmod>2022-06-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.halfstar.top/tags/algorithm/</loc>
     <lastmod>2022-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
