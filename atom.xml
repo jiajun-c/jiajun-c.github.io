@@ -6,7 +6,7 @@
   <link href="http://www.halfstar.top/atom.xml" rel="self"/>
   
   <link href="http://www.halfstar.top/"/>
-  <updated>2022-06-14T01:47:11.338Z</updated>
+  <updated>2022-06-14T14:03:25.343Z</updated>
   <id>http://www.halfstar.top/</id>
   
   <author>
@@ -15,6 +15,86 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>配置Your SpaceVim</title>
+    <link href="http://www.halfstar.top/2022/06/14/vim/"/>
+    <id>http://www.halfstar.top/2022/06/14/vim/</id>
+    <published>2022-06-14T12:08:16.000Z</published>
+    <updated>2022-06-14T14:03:25.343Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;配置your-spacevim&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#配置your-spacevim&quot;&gt;&lt;/a&gt; 配置Your SpaceVim&lt;/h1&gt;
+&lt;p&gt;虽然但是官网的配置指南感觉不太靠谱&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="linux" scheme="http://www.halfstar.top/categories/linux/"/>
+    
+    
+    <category term="vim" scheme="http://www.halfstar.top/tags/vim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>配置Your zsh</title>
+    <link href="http://www.halfstar.top/2022/06/14/zsh/"/>
+    <id>http://www.halfstar.top/2022/06/14/zsh/</id>
+    <published>2022-06-14T12:08:16.000Z</published>
+    <updated>2022-06-14T14:04:18.493Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;配置your-zsh&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#配置your-zsh&quot;&gt;&lt;/a&gt; 配置Your zsh&lt;/h1&gt;
+&lt;h2 id=&quot;1-主题美化&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="linux" scheme="http://www.halfstar.top/categories/linux/"/>
+    
+    
+    <category term="shell" scheme="http://www.halfstar.top/tags/shell/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CS144 lab1</title>
+    <link href="http://www.halfstar.top/2022/06/13/lab1/"/>
+    <id>http://www.halfstar.top/2022/06/13/lab1/</id>
+    <published>2022-06-13T12:08:16.000Z</published>
+    <updated>2022-06-14T14:02:19.006Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;cs144-lab1&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#cs144-lab1&quot;&gt;&lt;/a&gt; CS144 lab1&lt;/h1&gt;
+&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;p&gt;先放一张经典的图… Do you see the lab1 work</summary>
+        
+      
+    
+    
+    
+    <category term="计算机网络" scheme="http://www.halfstar.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="cpp 计算机网络" scheme="http://www.halfstar.top/tags/cpp-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>毛概复习</title>
@@ -446,35 +526,6 @@
     <category term="gdb" scheme="http://www.halfstar.top/tags/gdb/"/>
     
     <category term="debug" scheme="http://www.halfstar.top/tags/debug/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>csapp</title>
-    <link href="http://www.halfstar.top/2022/03/02/csapp/"/>
-    <id>http://www.halfstar.top/2022/03/02/csapp/</id>
-    <published>2022-03-02T12:08:16.000Z</published>
-    <updated>2022-03-14T02:48:12.875Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;data-lab&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#data-lab&quot;&gt;&lt;/a&gt; Data lab&lt;/h1&gt;
-&lt;p&gt;鸽&lt;/p&gt;
-&lt;h1 id=&quot;bomb-lab&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="lab" scheme="http://www.halfstar.top/categories/lab/"/>
-    
-    
-    <category term="linux" scheme="http://www.halfstar.top/tags/linux/"/>
-    
-    <category term="cs" scheme="http://www.halfstar.top/tags/cs/"/>
     
   </entry>
   
