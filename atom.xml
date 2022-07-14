@@ -6,7 +6,7 @@
   <link href="http://www.halfstar.top/atom.xml" rel="self"/>
   
   <link href="http://www.halfstar.top/"/>
-  <updated>2022-07-14T05:17:48.795Z</updated>
+  <updated>2022-07-14T05:59:27.314Z</updated>
   <id>http://www.halfstar.top/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jump</title>
+    <link href="http://www.halfstar.top/2022/07/14/jump/"/>
+    <id>http://www.halfstar.top/2022/07/14/jump/</id>
+    <published>2022-07-14T02:57:36.000Z</published>
+    <updated>2022-07-14T05:59:27.314Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;跳跃问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#跳跃问题&quot;&gt;&lt;/a&gt; 跳跃问题&lt;/h1&gt;
+&lt;p&gt;有一类常见的问题，在河上有n个点，求跳到某个位置所需要的最小步数或者是能否抵达&lt;br</summary>
+        
+      
+    
+    
+    
+    <category term="leetcode" scheme="http://www.halfstar.top/categories/leetcode/"/>
+    
+    
+    <category term="algorithm" scheme="http://www.halfstar.top/tags/algorithm/"/>
+    
+    <category term="leetcode" scheme="http://www.halfstar.top/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ssh</title>
+    <link href="http://www.halfstar.top/2022/07/14/ssh/"/>
+    <id>http://www.halfstar.top/2022/07/14/ssh/</id>
+    <published>2022-07-14T02:23:09.000Z</published>
+    <updated>2022-07-14T05:55:53.977Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;ssh-进行远程连接&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#ssh-进行远程连接&quot;&gt;&lt;/a&gt; SSH 进行远程连接&lt;/h1&gt;
+&lt;h2 id=&quot;install-the-openssl&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="linux" scheme="http://www.halfstar.top/categories/linux/"/>
+    
+    
+    <category term="command" scheme="http://www.halfstar.top/tags/command/"/>
+    
+  </entry>
   
   <entry>
     <title>配置Your SpaceVim</title>
@@ -74,7 +128,7 @@
     <link href="http://www.halfstar.top/2022/06/13/lab1/"/>
     <id>http://www.halfstar.top/2022/06/13/lab1/</id>
     <published>2022-06-13T12:08:16.000Z</published>
-    <updated>2022-07-14T05:17:49.332Z</updated>
+    <updated>2022-07-14T06:04:11.144Z</updated>
     
     
       
@@ -89,10 +143,10 @@
     
     
     
-    <category term="计算机网络" scheme="http://www.halfstar.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    <category term="lab" scheme="http://www.halfstar.top/categories/lab/"/>
     
     
-    <category term="cpp 计算机网络" scheme="http://www.halfstar.top/tags/cpp-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    <category term="network" scheme="http://www.halfstar.top/tags/network/"/>
     
   </entry>
   
@@ -258,6 +312,31 @@
   </entry>
   
   <entry>
+    <title>curl method</title>
+    <link href="http://www.halfstar.top/2022/05/30/curl/"/>
+    <id>http://www.halfstar.top/2022/05/30/curl/</id>
+    <published>2022-05-30T12:08:16.000Z</published>
+    <updated>2022-07-14T05:17:49.509Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;the-curl-method&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#the-curl-method&quot;&gt;&lt;/a&gt; The curl</summary>
+        
+      
+    
+    
+    
+    <category term="linux" scheme="http://www.halfstar.top/categories/linux/"/>
+    
+    
+    <category term="command" scheme="http://www.halfstar.top/tags/command/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CSP 2022_3_20 题解</title>
     <link href="http://www.halfstar.top/2022/05/30/csp_2022_3/"/>
     <id>http://www.halfstar.top/2022/05/30/csp_2022_3/</id>
@@ -280,31 +359,6 @@
     
     
     <category term="algorithm" scheme="http://www.halfstar.top/tags/algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>curl method</title>
-    <link href="http://www.halfstar.top/2022/05/30/curl/"/>
-    <id>http://www.halfstar.top/2022/05/30/curl/</id>
-    <published>2022-05-30T12:08:16.000Z</published>
-    <updated>2022-07-14T05:17:49.509Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;the-curl-method&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#the-curl-method&quot;&gt;&lt;/a&gt; The curl</summary>
-        
-      
-    
-    
-    
-    <category term="linux" scheme="http://www.halfstar.top/categories/linux/"/>
-    
-    
-    <category term="command" scheme="http://www.halfstar.top/tags/command/"/>
     
   </entry>
   
@@ -484,48 +538,6 @@
     <category term="图论" scheme="http://www.halfstar.top/tags/%E5%9B%BE%E8%AE%BA/"/>
     
     <category term="最短路" scheme="http://www.halfstar.top/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>objdump</title>
-    <link href="http://www.halfstar.top/2022/03/02/objdump/"/>
-    <id>http://www.halfstar.top/2022/03/02/objdump/</id>
-    <published>2022-03-02T14:13:02.000Z</published>
-    <updated>2022-07-14T05:17:50.145Z</updated>
-    
-    
-    <summary type="html">start debug in the linux</summary>
-    
-    
-    
-    <category term="linux" scheme="http://www.halfstar.top/categories/linux/"/>
-    
-    
-    <category term="linux" scheme="http://www.halfstar.top/tags/linux/"/>
-    
-    <category term="assemble" scheme="http://www.halfstar.top/tags/assemble/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>gdb.md</title>
-    <link href="http://www.halfstar.top/2022/03/02/gdb/"/>
-    <id>http://www.halfstar.top/2022/03/02/gdb/</id>
-    <published>2022-03-02T13:17:03.000Z</published>
-    <updated>2022-07-14T05:17:48.619Z</updated>
-    
-    
-    <summary type="html">start debug in the linux</summary>
-    
-    
-    
-    <category term="linux" scheme="http://www.halfstar.top/categories/linux/"/>
-    
-    
-    <category term="gdb" scheme="http://www.halfstar.top/tags/gdb/"/>
-    
-    <category term="debug" scheme="http://www.halfstar.top/tags/debug/"/>
     
   </entry>
   
