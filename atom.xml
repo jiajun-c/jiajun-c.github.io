@@ -6,7 +6,7 @@
   <link href="http://www.halfstar.top/atom.xml" rel="self"/>
   
   <link href="http://www.halfstar.top/"/>
-  <updated>2022-07-15T06:34:47.107Z</updated>
+  <updated>2022-07-15T11:36:34.305Z</updated>
   <id>http://www.halfstar.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>latex</title>
+    <link href="http://www.halfstar.top/2022/07/15/latex/"/>
+    <id>http://www.halfstar.top/2022/07/15/latex/</id>
+    <published>2022-07-15T09:12:12.000Z</published>
+    <updated>2022-07-15T11:36:34.305Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;latex-模块化模板&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#latex-模块化模板&quot;&gt;&lt;/a&gt; Latex 模块化模板&lt;/h1&gt;
+&lt;h2 id=&quot;整体效果预览&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="latex" scheme="http://www.halfstar.top/categories/latex/"/>
+    
+    
+    <category term="paper" scheme="http://www.halfstar.top/tags/paper/"/>
+    
+  </entry>
   
   <entry>
     <title>cmu15-445_lab0</title>
@@ -508,33 +534,6 @@
     
     
     <category term="java" scheme="http://www.halfstar.top/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ctrl c v in linux</title>
-    <link href="http://www.halfstar.top/2022/03/24/cv/"/>
-    <id>http://www.halfstar.top/2022/03/24/cv/</id>
-    <published>2022-03-24T13:17:03.000Z</published>
-    <updated>2022-07-14T05:17:48.705Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;how-to-ctrl-c-v-in-the-vim&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#how-to-ctrl-c-v-in-the-vim&quot;&gt;&lt;/a&gt; How to ctrl-c-v in the</summary>
-        
-      
-    
-    
-    
-    <category term="lab" scheme="http://www.halfstar.top/categories/lab/"/>
-    
-    
-    <category term="linux" scheme="http://www.halfstar.top/tags/linux/"/>
-    
-    <category term="vim" scheme="http://www.halfstar.top/tags/vim/"/>
     
   </entry>
   
