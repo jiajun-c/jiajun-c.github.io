@@ -6,7 +6,7 @@
   <link href="http://www.halfstar.top/atom.xml" rel="self"/>
   
   <link href="http://www.halfstar.top/"/>
-  <updated>2022-07-14T05:59:27.314Z</updated>
+  <updated>2022-07-15T06:34:47.107Z</updated>
   <id>http://www.halfstar.top/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>cmu15-445_lab0</title>
+    <link href="http://www.halfstar.top/2022/07/15/cmu15-445_lab0/"/>
+    <id>http://www.halfstar.top/2022/07/15/cmu15-445_lab0/</id>
+    <published>2022-07-15T03:33:33.000Z</published>
+    <updated>2022-07-15T06:34:47.107Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;cmu15-445_lab0-c-primer&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#cmu15-445_lab0-c-primer&quot;&gt;&lt;/a&gt; CMU15-445_lab0 C++ primer&lt;/h1&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="lab" scheme="http://www.halfstar.top/categories/lab/"/>
+    
+    
+    <category term="cmu15-445" scheme="http://www.halfstar.top/tags/cmu15-445/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>将网页变为APP</title>
+    <link href="http://www.halfstar.top/2022/07/15/nativefier/"/>
+    <id>http://www.halfstar.top/2022/07/15/nativefier/</id>
+    <published>2022-07-15T03:12:12.000Z</published>
+    <updated>2022-07-15T10:15:09.535Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;将网页变为app&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#将网页变为app&quot;&gt;&lt;/a&gt; 将网页变为APP&lt;/h1&gt;
+&lt;h2 id=&quot;install-the-tools&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="linux" scheme="http://www.halfstar.top/categories/linux/"/>
+    
+    
+    <category term=".desktop" scheme="http://www.halfstar.top/tags/desktop/"/>
+    
+    <category term="app" scheme="http://www.halfstar.top/tags/app/"/>
+    
+  </entry>
   
   <entry>
     <title>jump</title>
@@ -67,6 +121,57 @@
     
     
     <category term="command" scheme="http://www.halfstar.top/tags/command/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>tinysql_lab1</title>
+    <link href="http://www.halfstar.top/2022/07/13/tinysql_lab1/"/>
+    <id>http://www.halfstar.top/2022/07/13/tinysql_lab1/</id>
+    <published>2022-07-13T15:00:00.000Z</published>
+    <updated>2022-07-14T08:59:21.007Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;table-codec-编写tinysql的解码器&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#table-codec-编写tinysql的解码器&quot;&gt;&lt;/a&gt; Table Codec – 编写tinysql的解码器&lt;/h1&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="lab" scheme="http://www.halfstar.top/categories/lab/"/>
+    
+    
+    <category term="tinysql" scheme="http://www.halfstar.top/tags/tinysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>tree</title>
+    <link href="http://www.halfstar.top/2022/07/13/tree/"/>
+    <id>http://www.halfstar.top/2022/07/13/tree/</id>
+    <published>2022-07-13T12:08:16.000Z</published>
+    <updated>2022-07-14T09:08:59.277Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;use-the-preorder-inorder-to-construct-the-tree&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="algorithm" scheme="http://www.halfstar.top/categories/algorithm/"/>
+    
+    
+    <category term="-leetcode" scheme="http://www.halfstar.top/tags/leetcode/"/>
     
   </entry>
   
@@ -182,7 +287,7 @@
     <link href="http://www.halfstar.top/2022/06/10/lab0/"/>
     <id>http://www.halfstar.top/2022/06/10/lab0/</id>
     <published>2022-06-10T12:08:16.000Z</published>
-    <updated>2022-07-14T05:17:49.065Z</updated>
+    <updated>2022-07-14T06:23:39.804Z</updated>
     
     
       
@@ -197,10 +302,10 @@
     
     
     
-    <category term="计算机网络" scheme="http://www.halfstar.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    <category term="lab" scheme="http://www.halfstar.top/categories/lab/"/>
     
     
-    <category term="command" scheme="http://www.halfstar.top/tags/command/"/>
+    <category term="network" scheme="http://www.halfstar.top/tags/network/"/>
     
   </entry>
   
@@ -312,31 +417,6 @@
   </entry>
   
   <entry>
-    <title>curl method</title>
-    <link href="http://www.halfstar.top/2022/05/30/curl/"/>
-    <id>http://www.halfstar.top/2022/05/30/curl/</id>
-    <published>2022-05-30T12:08:16.000Z</published>
-    <updated>2022-07-14T05:17:49.509Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;the-curl-method&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#the-curl-method&quot;&gt;&lt;/a&gt; The curl</summary>
-        
-      
-    
-    
-    
-    <category term="linux" scheme="http://www.halfstar.top/categories/linux/"/>
-    
-    
-    <category term="command" scheme="http://www.halfstar.top/tags/command/"/>
-    
-  </entry>
-  
-  <entry>
     <title>CSP 2022_3_20 题解</title>
     <link href="http://www.halfstar.top/2022/05/30/csp_2022_3/"/>
     <id>http://www.halfstar.top/2022/05/30/csp_2022_3/</id>
@@ -359,6 +439,31 @@
     
     
     <category term="algorithm" scheme="http://www.halfstar.top/tags/algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>curl method</title>
+    <link href="http://www.halfstar.top/2022/05/30/curl/"/>
+    <id>http://www.halfstar.top/2022/05/30/curl/</id>
+    <published>2022-05-30T12:08:16.000Z</published>
+    <updated>2022-07-14T05:17:49.509Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;the-curl-method&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#the-curl-method&quot;&gt;&lt;/a&gt; The curl</summary>
+        
+      
+    
+    
+    
+    <category term="linux" scheme="http://www.halfstar.top/categories/linux/"/>
+    
+    
+    <category term="command" scheme="http://www.halfstar.top/tags/command/"/>
     
   </entry>
   
@@ -430,114 +535,6 @@
     <category term="linux" scheme="http://www.halfstar.top/tags/linux/"/>
     
     <category term="vim" scheme="http://www.halfstar.top/tags/vim/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux配置指南</title>
-    <link href="http://www.halfstar.top/2022/03/21/linux/"/>
-    <id>http://www.halfstar.top/2022/03/21/linux/</id>
-    <published>2022-03-21T08:05:07.000Z</published>
-    <updated>2022-07-14T05:17:49.425Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;linux-配置教程&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#linux-配置教程&quot;&gt;&lt;/a&gt; Linux 配置教程&lt;/h1&gt;
-&lt;h2 id=&quot;一-输入法&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="linux" scheme="http://www.halfstar.top/categories/linux/"/>
-    
-    
-    <category term="linux" scheme="http://www.halfstar.top/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>组合数</title>
-    <link href="http://www.halfstar.top/2022/03/06/%E7%BB%84%E5%90%88%E6%95%B0/"/>
-    <id>http://www.halfstar.top/2022/03/06/%E7%BB%84%E5%90%88%E6%95%B0/</id>
-    <published>2022-03-05T21:30:11.000Z</published>
-    <updated>2022-07-14T05:17:49.159Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;组合数&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#组合数&quot;&gt;&lt;/a&gt; 组合数&lt;/h1&gt;
-&lt;h2 id=&quot;1whats-this&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="ACM" scheme="http://www.halfstar.top/categories/ACM/"/>
-    
-    
-    <category term="-数论" scheme="http://www.halfstar.top/tags/%E6%95%B0%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>折半查找</title>
-    <link href="http://www.halfstar.top/2022/03/03/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE/"/>
-    <id>http://www.halfstar.top/2022/03/03/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE/</id>
-    <published>2022-03-03T11:20:41.000Z</published>
-    <updated>2022-07-14T05:17:50.415Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;meet-in-middle&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#meet-in-middle&quot;&gt;&lt;/a&gt; Meet In middle&lt;/h1&gt;
-&lt;p&gt;&lt;span class=&quot;katex&quot;&gt;&lt;span</summary>
-        
-      
-    
-    
-    
-    <category term="ACM" scheme="http://www.halfstar.top/categories/ACM/"/>
-    
-    
-    <category term="搜索" scheme="http://www.halfstar.top/tags/%E6%90%9C%E7%B4%A2/"/>
-    
-    <category term="二分" scheme="http://www.halfstar.top/tags/%E4%BA%8C%E5%88%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>k点最短路</title>
-    <link href="http://www.halfstar.top/2022/03/03/k/"/>
-    <id>http://www.halfstar.top/2022/03/03/k/</id>
-    <published>2022-03-03T08:05:07.000Z</published>
-    <updated>2022-07-14T05:17:49.595Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;k点最短路&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#k点最短路&quot;&gt;&lt;/a&gt; K点最短路&lt;/h1&gt;
-&lt;p&gt;在OI中,有一类经典的问题叫做经过K点的最短路径, 解题的思路大致是利用flyod和之前我们学习过的广义矩阵乘法,</summary>
-        
-      
-    
-    
-    
-    <category term="ACM" scheme="http://www.halfstar.top/categories/ACM/"/>
-    
-    
-    <category term="图论" scheme="http://www.halfstar.top/tags/%E5%9B%BE%E8%AE%BA/"/>
-    
-    <category term="最短路" scheme="http://www.halfstar.top/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/"/>
     
   </entry>
   
