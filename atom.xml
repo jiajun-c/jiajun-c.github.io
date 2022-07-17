@@ -6,7 +6,7 @@
   <link href="http://www.halfstar.top/atom.xml" rel="self"/>
   
   <link href="http://www.halfstar.top/"/>
-  <updated>2022-07-16T07:44:16.349Z</updated>
+  <updated>2022-07-17T10:36:12.631Z</updated>
   <id>http://www.halfstar.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>all of the subsets</title>
+    <link href="http://www.halfstar.top/2022/07/17/two/"/>
+    <id>http://www.halfstar.top/2022/07/17/two/</id>
+    <published>2022-07-17T03:12:12.000Z</published>
+    <updated>2022-07-17T10:36:12.631Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;get-all-of-the-subsets-of-the-set&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#get-all-of-the-subsets-of-the-set&quot;&gt;&lt;/a&gt; Get all of the</summary>
+        
+      
+    
+    
+    
+    <category term="algorithm" scheme="http://www.halfstar.top/categories/algorithm/"/>
+    
+    
+    <category term="math" scheme="http://www.halfstar.top/tags/math/"/>
+    
+  </entry>
   
   <entry>
     <title>Permutation</title>
@@ -507,31 +532,6 @@
         
         
     <summary type="html">&lt;h1 id=&quot;the-curl-method&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#the-curl-method&quot;&gt;&lt;/a&gt; The curl</summary>
-        
-      
-    
-    
-    
-    <category term="linux" scheme="http://www.halfstar.top/categories/linux/"/>
-    
-    
-    <category term="command" scheme="http://www.halfstar.top/tags/command/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ln command</title>
-    <link href="http://www.halfstar.top/2022/03/30/ln/"/>
-    <id>http://www.halfstar.top/2022/03/30/ln/</id>
-    <published>2022-03-30T12:08:16.000Z</published>
-    <updated>2022-07-14T05:17:50.229Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;how-to-create-a-link-in-the-linux&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#how-to-create-a-link-in-the-linux&quot;&gt;&lt;/a&gt; How to create a link</summary>
         
       
     
