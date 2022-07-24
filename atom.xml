@@ -6,7 +6,7 @@
   <link href="http://www.halfstar.top/atom.xml" rel="self"/>
   
   <link href="http://www.halfstar.top/"/>
-  <updated>2022-07-17T10:36:12.631Z</updated>
+  <updated>2022-07-24T11:31:54.887Z</updated>
   <id>http://www.halfstar.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>shell lab</title>
+    <link href="http://www.halfstar.top/2022/07/23/shelllab/"/>
+    <id>http://www.halfstar.top/2022/07/23/shelllab/</id>
+    <published>2022-07-23T03:33:33.000Z</published>
+    <updated>2022-07-24T11:31:54.887Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;csapp-shell-lab&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#csapp-shell-lab&quot;&gt;&lt;/a&gt; CSAPP shell lab&lt;/h1&gt;
+&lt;h2 id=&quot;1-给出的函数功能&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="lab" scheme="http://www.halfstar.top/categories/lab/"/>
+    
+    
+    <category term="csapp" scheme="http://www.halfstar.top/tags/csapp/"/>
+    
+  </entry>
   
   <entry>
     <title>all of the subsets</title>
@@ -516,31 +542,6 @@
     
     
     <category term="algorithm" scheme="http://www.halfstar.top/tags/algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>curl method</title>
-    <link href="http://www.halfstar.top/2022/05/30/curl/"/>
-    <id>http://www.halfstar.top/2022/05/30/curl/</id>
-    <published>2022-05-30T12:08:16.000Z</published>
-    <updated>2022-07-14T05:17:49.509Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;the-curl-method&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#the-curl-method&quot;&gt;&lt;/a&gt; The curl</summary>
-        
-      
-    
-    
-    
-    <category term="linux" scheme="http://www.halfstar.top/categories/linux/"/>
-    
-    
-    <category term="command" scheme="http://www.halfstar.top/tags/command/"/>
     
   </entry>
   
