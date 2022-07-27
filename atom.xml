@@ -6,7 +6,7 @@
   <link href="http://www.halfstar.top/atom.xml" rel="self"/>
   
   <link href="http://www.halfstar.top/"/>
-  <updated>2022-07-25T13:48:16.895Z</updated>
+  <updated>2022-07-27T08:33:15.621Z</updated>
   <id>http://www.halfstar.top/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>javascript</title>
+    <link href="http://www.halfstar.top/2022/07/25/js/"/>
+    <id>http://www.halfstar.top/2022/07/25/js/</id>
+    <published>2022-07-25T03:12:12.000Z</published>
+    <updated>2022-07-27T08:33:15.621Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;javascript-入门&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#javascript-入门&quot;&gt;&lt;/a&gt; JavaScript 入门&lt;/h1&gt;
+&lt;h2 id=&quot;1-基本用法&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="web" scheme="http://www.halfstar.top/categories/web/"/>
+    
+    
+    <category term="front" scheme="http://www.halfstar.top/tags/front/"/>
+    
+    <category term="js" scheme="http://www.halfstar.top/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title>求解最大矩形</title>
@@ -518,32 +546,6 @@
     
     
     <category term="command" scheme="http://www.halfstar.top/tags/command/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSP 2021_12 题解</title>
-    <link href="http://www.halfstar.top/2022/05/30/csp_2021_12/"/>
-    <id>http://www.halfstar.top/2022/05/30/csp_2021_12/</id>
-    <published>2022-05-30T12:08:16.000Z</published>
-    <updated>2022-07-14T05:17:49.679Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;csp-2021-12月&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#csp-2021-12月&quot;&gt;&lt;/a&gt; CSP 2021 12月&lt;/h1&gt;
-&lt;h2 id=&quot;一-序列查询&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="CSP" scheme="http://www.halfstar.top/categories/CSP/"/>
-    
-    
-    <category term="algorithm" scheme="http://www.halfstar.top/tags/algorithm/"/>
     
   </entry>
   
