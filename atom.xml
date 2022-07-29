@@ -6,7 +6,7 @@
   <link href="http://www.halfstar.top/atom.xml" rel="self"/>
   
   <link href="http://www.halfstar.top/"/>
-  <updated>2022-07-27T08:33:15.621Z</updated>
+  <updated>2022-07-29T11:54:15.463Z</updated>
   <id>http://www.halfstar.top/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>cs144 lab2</title>
+    <link href="http://www.halfstar.top/2022/07/28/cs144lab2/"/>
+    <id>http://www.halfstar.top/2022/07/28/cs144lab2/</id>
+    <published>2022-07-28T03:12:12.000Z</published>
+    <updated>2022-07-29T11:54:15.463Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;cs144-lab2&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#cs144-lab2&quot;&gt;&lt;/a&gt; CS144 lab2&lt;/h1&gt;
+&lt;p&gt;在lab2中将实现tcp的接收器&lt;/p&gt;
+&lt;h2 id=&quot;project1&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="lab" scheme="http://www.halfstar.top/categories/lab/"/>
+    
+    
+    <category term="cs144" scheme="http://www.halfstar.top/tags/cs144/"/>
+    
+    <category term="network" scheme="http://www.halfstar.top/tags/network/"/>
+    
+  </entry>
   
   <entry>
     <title>javascript</title>
@@ -510,33 +539,6 @@
     <summary type="html">&lt;h1 id=&quot;数据信息的表示&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#数据信息的表示&quot;&gt;&lt;/a&gt; 数据信息的表示&lt;/h1&gt;
 &lt;p&gt;[TOC]&lt;/p&gt;
 &lt;h2 id=&quot;数值数据的表示&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="计算机组成原理" scheme="http://www.halfstar.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
-    
-    
-    <category term="command" scheme="http://www.halfstar.top/tags/command/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机组成原理(4) - 存储系统</title>
-    <link href="http://www.halfstar.top/2022/06/01/chapter4/"/>
-    <id>http://www.halfstar.top/2022/06/01/chapter4/</id>
-    <published>2022-06-01T12:08:16.000Z</published>
-    <updated>2022-07-14T05:17:48.975Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;存储系统&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#存储系统&quot;&gt;&lt;/a&gt; 存储系统&lt;/h1&gt;
-&lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h2 id=&quot;一-存储器概述&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
         
       
     
