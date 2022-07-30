@@ -6,7 +6,7 @@
   <link href="http://www.halfstar.top/atom.xml" rel="self"/>
   
   <link href="http://www.halfstar.top/"/>
-  <updated>2022-07-29T11:54:15.463Z</updated>
+  <updated>2022-07-30T15:22:06.891Z</updated>
   <id>http://www.halfstar.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux 文件系统解析</title>
+    <link href="http://www.halfstar.top/2022/07/30/dir/"/>
+    <id>http://www.halfstar.top/2022/07/30/dir/</id>
+    <published>2022-07-30T03:12:12.000Z</published>
+    <updated>2022-07-30T15:22:06.891Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;linux-系统目录结构&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#linux-系统目录结构&quot;&gt;&lt;/a&gt; linux 系统目录结构&lt;/h1&gt;
+&lt;h2 id=&quot;1-整体结构&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="linux" scheme="http://www.halfstar.top/categories/linux/"/>
+    
+    
+    <category term="filesystem" scheme="http://www.halfstar.top/tags/filesystem/"/>
+    
+  </entry>
   
   <entry>
     <title>cs144 lab2</title>
@@ -364,6 +390,32 @@
   </entry>
   
   <entry>
+    <title>配置Your zsh</title>
+    <link href="http://www.halfstar.top/2022/06/14/zsh/"/>
+    <id>http://www.halfstar.top/2022/06/14/zsh/</id>
+    <published>2022-06-14T12:08:16.000Z</published>
+    <updated>2022-07-14T05:17:49.965Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;配置your-zsh&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#配置your-zsh&quot;&gt;&lt;/a&gt; 配置Your zsh&lt;/h1&gt;
+&lt;h2 id=&quot;1-主题美化&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="linux" scheme="http://www.halfstar.top/categories/linux/"/>
+    
+    
+    <category term="shell" scheme="http://www.halfstar.top/tags/shell/"/>
+    
+  </entry>
+  
+  <entry>
     <title>配置Your SpaceVim</title>
     <link href="http://www.halfstar.top/2022/06/14/vim/"/>
     <id>http://www.halfstar.top/2022/06/14/vim/</id>
@@ -387,32 +439,6 @@
     
     
     <category term="vim" scheme="http://www.halfstar.top/tags/vim/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>配置Your zsh</title>
-    <link href="http://www.halfstar.top/2022/06/14/zsh/"/>
-    <id>http://www.halfstar.top/2022/06/14/zsh/</id>
-    <published>2022-06-14T12:08:16.000Z</published>
-    <updated>2022-07-14T05:17:49.965Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;配置your-zsh&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#配置your-zsh&quot;&gt;&lt;/a&gt; 配置Your zsh&lt;/h1&gt;
-&lt;h2 id=&quot;1-主题美化&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="linux" scheme="http://www.halfstar.top/categories/linux/"/>
-    
-    
-    <category term="shell" scheme="http://www.halfstar.top/tags/shell/"/>
     
   </entry>
   
@@ -512,33 +538,6 @@
     <summary type="html">&lt;h1 id=&quot;性能指标&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#性能指标&quot;&gt;&lt;/a&gt; 性能指标&lt;/h1&gt;
 &lt;p&gt;[TOC]&lt;/p&gt;
 &lt;h2 id=&quot;时钟周期&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="计算机组成原理" scheme="http://www.halfstar.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
-    
-    
-    <category term="command" scheme="http://www.halfstar.top/tags/command/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机组成原理(2) - 数据信息的表示</title>
-    <link href="http://www.halfstar.top/2022/06/01/chapter2/"/>
-    <id>http://www.halfstar.top/2022/06/01/chapter2/</id>
-    <published>2022-06-01T12:08:16.000Z</published>
-    <updated>2022-07-14T05:17:50.332Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;数据信息的表示&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#数据信息的表示&quot;&gt;&lt;/a&gt; 数据信息的表示&lt;/h1&gt;
-&lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h2 id=&quot;数值数据的表示&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
         
       
     
