@@ -6,7 +6,7 @@
   <link href="http://www.halfstar.top/atom.xml" rel="self"/>
   
   <link href="http://www.halfstar.top/"/>
-  <updated>2022-07-30T15:22:06.891Z</updated>
+  <updated>2022-08-01T01:03:26.548Z</updated>
   <id>http://www.halfstar.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>nodejs入门</title>
+    <link href="http://www.halfstar.top/2022/08/01/nodejs/"/>
+    <id>http://www.halfstar.top/2022/08/01/nodejs/</id>
+    <published>2022-08-01T03:12:12.000Z</published>
+    <updated>2022-08-01T01:03:26.548Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;nodejs-入门&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#nodejs-入门&quot;&gt;&lt;/a&gt; nodejs 入门&lt;/h1&gt;
+&lt;h2 id=&quot;1-一个简单的粒子&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="web" scheme="http://www.halfstar.top/categories/web/"/>
+    
+    
+    <category term="nodejs" scheme="http://www.halfstar.top/tags/nodejs/"/>
+    
+  </entry>
   
   <entry>
     <title>linux 文件系统解析</title>
@@ -390,32 +416,6 @@
   </entry>
   
   <entry>
-    <title>配置Your zsh</title>
-    <link href="http://www.halfstar.top/2022/06/14/zsh/"/>
-    <id>http://www.halfstar.top/2022/06/14/zsh/</id>
-    <published>2022-06-14T12:08:16.000Z</published>
-    <updated>2022-07-14T05:17:49.965Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;配置your-zsh&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#配置your-zsh&quot;&gt;&lt;/a&gt; 配置Your zsh&lt;/h1&gt;
-&lt;h2 id=&quot;1-主题美化&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="linux" scheme="http://www.halfstar.top/categories/linux/"/>
-    
-    
-    <category term="shell" scheme="http://www.halfstar.top/tags/shell/"/>
-    
-  </entry>
-  
-  <entry>
     <title>配置Your SpaceVim</title>
     <link href="http://www.halfstar.top/2022/06/14/vim/"/>
     <id>http://www.halfstar.top/2022/06/14/vim/</id>
@@ -439,6 +439,32 @@
     
     
     <category term="vim" scheme="http://www.halfstar.top/tags/vim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>配置Your zsh</title>
+    <link href="http://www.halfstar.top/2022/06/14/zsh/"/>
+    <id>http://www.halfstar.top/2022/06/14/zsh/</id>
+    <published>2022-06-14T12:08:16.000Z</published>
+    <updated>2022-07-14T05:17:49.965Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;配置your-zsh&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#配置your-zsh&quot;&gt;&lt;/a&gt; 配置Your zsh&lt;/h1&gt;
+&lt;h2 id=&quot;1-主题美化&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="linux" scheme="http://www.halfstar.top/categories/linux/"/>
+    
+    
+    <category term="shell" scheme="http://www.halfstar.top/tags/shell/"/>
     
   </entry>
   
@@ -520,33 +546,6 @@
     
     
     <category term="network" scheme="http://www.halfstar.top/tags/network/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机组成原理(1) - 计算机系统概述</title>
-    <link href="http://www.halfstar.top/2022/06/01/chapter1/"/>
-    <id>http://www.halfstar.top/2022/06/01/chapter1/</id>
-    <published>2022-06-01T12:08:16.000Z</published>
-    <updated>2022-07-14T05:17:48.885Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;性能指标&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#性能指标&quot;&gt;&lt;/a&gt; 性能指标&lt;/h1&gt;
-&lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h2 id=&quot;时钟周期&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="计算机组成原理" scheme="http://www.halfstar.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
-    
-    
-    <category term="command" scheme="http://www.halfstar.top/tags/command/"/>
     
   </entry>
   
