@@ -6,7 +6,7 @@
   <link href="http://www.halfstar.top/atom.xml" rel="self"/>
   
   <link href="http://www.halfstar.top/"/>
-  <updated>2022-08-03T08:11:35.356Z</updated>
+  <updated>2022-08-08T04:14:29.992Z</updated>
   <id>http://www.halfstar.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>go_binary</title>
+    <link href="http://www.halfstar.top/2022/08/08/go_binary/"/>
+    <id>http://www.halfstar.top/2022/08/08/go_binary/</id>
+    <published>2022-08-08T03:12:12.000Z</published>
+    <updated>2022-08-08T04:14:29.992Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;go-语言二分查找&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#go-语言二分查找&quot;&gt;&lt;/a&gt; go 语言二分查找&lt;/h1&gt;
+&lt;h2 id=&quot;1-lower_bound&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="algorithm" scheme="http://www.halfstar.top/categories/algorithm/"/>
+    
+    
+    <category term="go" scheme="http://www.halfstar.top/tags/go/"/>
+    
+  </entry>
   
   <entry>
     <title>leetcodde 729</title>
@@ -517,32 +543,6 @@
     
     
     <category term="vim" scheme="http://www.halfstar.top/tags/vim/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>配置Your zsh</title>
-    <link href="http://www.halfstar.top/2022/06/14/zsh/"/>
-    <id>http://www.halfstar.top/2022/06/14/zsh/</id>
-    <published>2022-06-14T12:08:16.000Z</published>
-    <updated>2022-07-14T05:17:49.965Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;配置your-zsh&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#配置your-zsh&quot;&gt;&lt;/a&gt; 配置Your zsh&lt;/h1&gt;
-&lt;h2 id=&quot;1-主题美化&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="linux" scheme="http://www.halfstar.top/categories/linux/"/>
-    
-    
-    <category term="shell" scheme="http://www.halfstar.top/tags/shell/"/>
     
   </entry>
   
