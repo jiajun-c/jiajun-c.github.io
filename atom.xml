@@ -6,7 +6,7 @@
   <link href="http://www.halfstar.top/atom.xml" rel="self"/>
   
   <link href="http://www.halfstar.top/"/>
-  <updated>2022-08-08T04:14:29.992Z</updated>
+  <updated>2022-08-14T12:14:33.327Z</updated>
   <id>http://www.halfstar.top/</id>
   
   <author>
@@ -15,6 +15,84 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>database3</title>
+    <link href="http://www.halfstar.top/2022/08/08/database3/"/>
+    <id>http://www.halfstar.top/2022/08/08/database3/</id>
+    <published>2022-08-08T04:40:40.000Z</published>
+    <updated>2022-08-14T12:14:33.327Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;sql&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#sql&quot;&gt;&lt;/a&gt; SQL&lt;/h1&gt;
+&lt;h2 id=&quot;1-sql语言概述&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#1-sql语言概述&quot;&gt;&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="note" scheme="http://www.halfstar.top/categories/note/"/>
+    
+    
+    <category term="database" scheme="http://www.halfstar.top/tags/database/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>database2</title>
+    <link href="http://www.halfstar.top/2022/08/08/database2/"/>
+    <id>http://www.halfstar.top/2022/08/08/database2/</id>
+    <published>2022-08-08T04:20:20.000Z</published>
+    <updated>2022-08-14T12:13:55.199Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;关系模型介绍&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#关系模型介绍&quot;&gt;&lt;/a&gt; 关系模型介绍&lt;/h1&gt;
+&lt;h2 id=&quot;1-关系数据库的结构&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="note" scheme="http://www.halfstar.top/categories/note/"/>
+    
+    
+    <category term="database" scheme="http://www.halfstar.top/tags/database/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>database1</title>
+    <link href="http://www.halfstar.top/2022/08/08/database1/"/>
+    <id>http://www.halfstar.top/2022/08/08/database1/</id>
+    <published>2022-08-08T04:13:13.000Z</published>
+    <updated>2022-08-08T08:41:50.548Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;数据库-引言&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#数据库-引言&quot;&gt;&lt;/a&gt; 数据库 （引言）&lt;/h1&gt;
+&lt;h2 id=&quot;1-数据模型&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="note" scheme="http://www.halfstar.top/categories/note/"/>
+    
+    
+    <category term="database" scheme="http://www.halfstar.top/tags/database/"/>
+    
+  </entry>
   
   <entry>
     <title>go_binary</title>
@@ -465,84 +543,6 @@
     
     
     <category term="command" scheme="http://www.halfstar.top/tags/command/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>tinysql_lab1</title>
-    <link href="http://www.halfstar.top/2022/07/13/tinysql_lab1/"/>
-    <id>http://www.halfstar.top/2022/07/13/tinysql_lab1/</id>
-    <published>2022-07-13T15:00:00.000Z</published>
-    <updated>2022-07-14T08:59:21.007Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;table-codec-编写tinysql的解码器&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#table-codec-编写tinysql的解码器&quot;&gt;&lt;/a&gt; Table Codec – 编写tinysql的解码器&lt;/h1&gt;
-&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="lab" scheme="http://www.halfstar.top/categories/lab/"/>
-    
-    
-    <category term="tinysql" scheme="http://www.halfstar.top/tags/tinysql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>tree</title>
-    <link href="http://www.halfstar.top/2022/07/13/tree/"/>
-    <id>http://www.halfstar.top/2022/07/13/tree/</id>
-    <published>2022-07-13T12:08:16.000Z</published>
-    <updated>2022-07-14T09:08:59.277Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;use-the-preorder-inorder-to-construct-the-tree&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="algorithm" scheme="http://www.halfstar.top/categories/algorithm/"/>
-    
-    
-    <category term="-leetcode" scheme="http://www.halfstar.top/tags/leetcode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>配置Your SpaceVim</title>
-    <link href="http://www.halfstar.top/2022/06/14/vim/"/>
-    <id>http://www.halfstar.top/2022/06/14/vim/</id>
-    <published>2022-06-14T12:08:16.000Z</published>
-    <updated>2022-07-14T05:17:48.795Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;配置your-spacevim&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#配置your-spacevim&quot;&gt;&lt;/a&gt; 配置Your SpaceVim&lt;/h1&gt;
-&lt;p&gt;虽然但是官网的配置指南感觉不太靠谱&lt;/p&gt;
-&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="linux" scheme="http://www.halfstar.top/categories/linux/"/>
-    
-    
-    <category term="vim" scheme="http://www.halfstar.top/tags/vim/"/>
     
   </entry>
   

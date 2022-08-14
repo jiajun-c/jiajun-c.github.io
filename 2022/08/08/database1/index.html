@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang="ch" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>database1 | HalfStar</title><meta name="keywords" content="database"><meta name="author" content="jiajun-c"><meta name="copyright" content="jiajun-c"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="数据库 （引言）  1. 数据模型  关系模型 实体-联系模型 基于对象的数据模型 半结构化数据模型   2. 数据操纵语言 数据操纵语言（DML）：是得用户可以访问或操纵那些按照某些适当的数据模型组织起来的数据，有下面的几种访问的类型  对存储在数据库中的信息进行存储 向数据库中插入新的信息 从数据库中删除信息 修改数据库中存储的信息  过程化DML：要求用户制定需要什么数据，和如何获得这些数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="database1">
+<meta property="og:url" content="http://www.halfstar.top/2022/08/08/database1/index.html">
+<meta property="og:site_name" content="HalfStar">
+<meta property="og:description" content="数据库 （引言）  1. 数据模型  关系模型 实体-联系模型 基于对象的数据模型 半结构化数据模型   2. 数据操纵语言 数据操纵语言（DML）：是得用户可以访问或操纵那些按照某些适当的数据模型组织起来的数据，有下面的几种访问的类型  对存储在数据库中的信息进行存储 向数据库中插入新的信息 从数据库中删除信息 修改数据库中存储的信息  过程化DML：要求用户制定需要什么数据，和如何获得这些数">
+<meta property="og:locale">
+<meta property="og:image" content="https://art.pixilart.com/original/sr2b1c4598cc2f4.gif">
+<meta property="article:published_time" content="2022-08-08T04:13:13.000Z">
+<meta property="article:modified_time" content="2022-08-08T08:41:50.548Z">
+<meta property="article:author" content="jiajun-c">
+<meta property="article:tag" content="database">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://art.pixilart.com/original/sr2b1c4598cc2f4.gif"><link rel="shortcut icon" href="/img/seaboy.jpg"><link rel="canonical" href="http://www.halfstar.top/2022/08/08/database1/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'database1',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-08-08 17:41:50'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="HalfStar" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/seaboy.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">43</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">35</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">12</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://art.pixilart.com/original/sr2b1c4598cc2f4.gif')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">HalfStar</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">database1</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-08-08T04:13:13.000Z" title="Created 2022-08-08 13:13:13">2022-08-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-08-08T08:41:50.548Z" title="Updated 2022-08-08 17:41:50">2022-08-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/note/">note</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="database1"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="数据库-引言"><a class="markdownIt-Anchor" href="#数据库-引言"></a> 数据库 （引言）</h1>
+<h2 id="1-数据模型"><a class="markdownIt-Anchor" href="#1-数据模型"></a> 1. 数据模型</h2>
+<ol>
+<li>关系模型</li>
+<li>实体-联系模型</li>
+<li>基于对象的数据模型</li>
+<li>半结构化数据模型</li>
+</ol>
+<h2 id="2-数据操纵语言"><a class="markdownIt-Anchor" href="#2-数据操纵语言"></a> 2. 数据操纵语言</h2>
+<p>数据操纵语言（DML）：是得用户可以访问或操纵那些按照某些适当的数据模型组织起来的数据，有下面的几种访问的类型</p>
+<ol>
+<li>对存储在数据库中的信息进行存储</li>
+<li>向数据库中插入新的信息</li>
+<li>从数据库中删除信息</li>
+<li>修改数据库中存储的信息</li>
+</ol>
+<p>过程化DML：要求用户制定需要什么数据，和如何获得这些数据</p>
+<p>声明式DML：只要求用户指定需要什么数据，而不指明如何获得这些数据</p>
+<h2 id="3-关系数据库"><a class="markdownIt-Anchor" href="#3-关系数据库"></a> 3. 关系数据库</h2>
+<p>关系数据库基于关系模型：使用一系列表来表达数据以及这些数据之间的联系，例如ID列和name…列</p>
+<h3 id="31-表"><a class="markdownIt-Anchor" href="#31-表"></a> 3.1 表</h3>
+<p>就是一个简单的key-values的映射</p>
+<h3 id="32-数据操纵语言"><a class="markdownIt-Anchor" href="#32-数据操纵语言"></a> 3.2 数据操纵语言</h3>
+<p>SQL语言是非过程化的语言，使用多个表作为⌨，总是仅返回一个表</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">jiajun-c</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://www.halfstar.top/2022/08/08/database1/">http://www.halfstar.top/2022/08/08/database1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/database/">database</a></div><div class="post_share"><div class="social-share" data-image="https://art.pixilart.com/original/sr2b1c4598cc2f4.gif" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/08/08/database2/"><img class="prev-cover" src="https://art.pixilart.com/sr218a13eb72dfe.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">database2</div></div></a></div><div class="next-post pull-right"><a href="/2022/08/08/go_binary/"><img class="next-cover" src="https://art.pixilart.com/sr23e067f20a2f6.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">go_binary</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2022/08/08/database2/" title="database2"><img class="cover" src="https://art.pixilart.com/sr218a13eb72dfe.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-08</div><div class="title">database2</div></div></a></div><div><a href="/2022/08/08/database3/" title="database3"><img class="cover" src="https://art.pixilart.com/sr218a13eb72dfe.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-08</div><div class="title">database3</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/seaboy.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">jiajun-c</div><div class="author-info__description">geek never stop</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">43</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">35</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">12</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/jiajun-c"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="/atom.xml" target="_blank" title=""><i class="rss"></i></a><a class="social-icon" href="https://github.com/jiajun-c" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:chengjiajun20@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS链接"><i class="fa fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%BC%95%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 数据库 （引言）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text"> 1. 数据模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%95%B0%E6%8D%AE%E6%93%8D%E7%BA%B5%E8%AF%AD%E8%A8%80"><span class="toc-number">1.2.</span> <span class="toc-text"> 2. 数据操纵语言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.3.</span> <span class="toc-text"> 3. 关系数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#31-%E8%A1%A8"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 3.1 表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#32-%E6%95%B0%E6%8D%AE%E6%93%8D%E7%BA%B5%E8%AF%AD%E8%A8%80"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 3.2 数据操纵语言</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/08/08/database3/" title="database3"><img src="https://art.pixilart.com/sr218a13eb72dfe.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="database3"/></a><div class="content"><a class="title" href="/2022/08/08/database3/" title="database3">database3</a><time datetime="2022-08-08T04:40:40.000Z" title="Created 2022-08-08 13:40:40">2022-08-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/08/database2/" title="database2"><img src="https://art.pixilart.com/sr218a13eb72dfe.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="database2"/></a><div class="content"><a class="title" href="/2022/08/08/database2/" title="database2">database2</a><time datetime="2022-08-08T04:20:20.000Z" title="Created 2022-08-08 13:20:20">2022-08-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/08/database1/" title="database1"><img src="https://art.pixilart.com/original/sr2b1c4598cc2f4.gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="database1"/></a><div class="content"><a class="title" href="/2022/08/08/database1/" title="database1">database1</a><time datetime="2022-08-08T04:13:13.000Z" title="Created 2022-08-08 13:13:13">2022-08-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/08/go_binary/" title="go_binary"><img src="https://art.pixilart.com/sr23e067f20a2f6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="go_binary"/></a><div class="content"><a class="title" href="/2022/08/08/go_binary/" title="go_binary">go_binary</a><time datetime="2022-08-08T03:12:12.000Z" title="Created 2022-08-08 12:12:12">2022-08-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/02/calendar/" title="leetcodde 729"><img src="https://art.pixilart.com/sr2a65ae055b11e.gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="leetcodde 729"/></a><div class="content"><a class="title" href="/2022/08/02/calendar/" title="leetcodde 729">leetcodde 729</a><time datetime="2022-08-02T03:12:12.000Z" title="Created 2022-08-02 12:12:12">2022-08-02</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By jiajun-c</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
