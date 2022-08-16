@@ -6,7 +6,7 @@
   <link href="http://www.halfstar.top/atom.xml" rel="self"/>
   
   <link href="http://www.halfstar.top/"/>
-  <updated>2022-08-14T12:14:33.327Z</updated>
+  <updated>2022-08-16T12:22:22.218Z</updated>
   <id>http://www.halfstar.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>leetcode128</title>
+    <link href="http://www.halfstar.top/2022/08/16/leetcode128/"/>
+    <id>http://www.halfstar.top/2022/08/16/leetcode128/</id>
+    <published>2022-08-16T03:12:12.000Z</published>
+    <updated>2022-08-16T12:22:22.218Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;leetcode-longest-consecutive-sequence&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#leetcode-longest-consecutive-sequence&quot;&gt;&lt;/a&gt; leetcode</summary>
+        
+      
+    
+    
+    
+    <category term="leetcode" scheme="http://www.halfstar.top/categories/leetcode/"/>
+    
+    
+    <category term="algorithm" scheme="http://www.halfstar.top/tags/algorithm/"/>
+    
+  </entry>
   
   <entry>
     <title>database3</title>
@@ -517,32 +542,6 @@
     <category term="leetcode" scheme="http://www.halfstar.top/tags/leetcode/"/>
     
     <category term="algorithm" scheme="http://www.halfstar.top/tags/algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ssh</title>
-    <link href="http://www.halfstar.top/2022/07/14/ssh/"/>
-    <id>http://www.halfstar.top/2022/07/14/ssh/</id>
-    <published>2022-07-14T02:23:09.000Z</published>
-    <updated>2022-07-14T05:55:53.977Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;ssh-进行远程连接&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#ssh-进行远程连接&quot;&gt;&lt;/a&gt; SSH 进行远程连接&lt;/h1&gt;
-&lt;h2 id=&quot;install-the-openssl&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="linux" scheme="http://www.halfstar.top/categories/linux/"/>
-    
-    
-    <category term="command" scheme="http://www.halfstar.top/tags/command/"/>
     
   </entry>
   
