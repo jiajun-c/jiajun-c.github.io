@@ -6,7 +6,7 @@
   <link href="http://www.halfstar.top/atom.xml" rel="self"/>
   
   <link href="http://www.halfstar.top/"/>
-  <updated>2022-08-16T12:22:22.218Z</updated>
+  <updated>2022-08-17T12:23:09.580Z</updated>
   <id>http://www.halfstar.top/</id>
   
   <author>
@@ -15,6 +15,57 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>leetcode132</title>
+    <link href="http://www.halfstar.top/2022/08/17/leetcode132/"/>
+    <id>http://www.halfstar.top/2022/08/17/leetcode132/</id>
+    <published>2022-08-17T03:12:12.000Z</published>
+    <updated>2022-08-17T12:23:09.580Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;leetcode-132-palindrome-partitioning-ii&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#leetcode-132-palindrome-partitioning-ii&quot;&gt;&lt;/a&gt; leetcode</summary>
+        
+      
+    
+    
+    
+    <category term="leetcode" scheme="http://www.halfstar.top/categories/leetcode/"/>
+    
+    
+    <category term="algorithm" scheme="http://www.halfstar.top/tags/algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Go 语言切片</title>
+    <link href="http://www.halfstar.top/2022/08/17/slice/"/>
+    <id>http://www.halfstar.top/2022/08/17/slice/</id>
+    <published>2022-08-17T03:12:12.000Z</published>
+    <updated>2022-08-17T12:24:12.995Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;go-语言切片&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#go-语言切片&quot;&gt;&lt;/a&gt; Go 语言切片&lt;/h1&gt;
+&lt;h2 id=&quot;1-定义切片&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="go" scheme="http://www.halfstar.top/categories/go/"/>
+    
+    
+    <category term="语法" scheme="http://www.halfstar.top/tags/%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>leetcode128</title>
@@ -486,62 +537,6 @@
     
     
     <category term="cmu15-445" scheme="http://www.halfstar.top/tags/cmu15-445/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>将网页变为APP</title>
-    <link href="http://www.halfstar.top/2022/07/15/nativefier/"/>
-    <id>http://www.halfstar.top/2022/07/15/nativefier/</id>
-    <published>2022-07-15T03:12:12.000Z</published>
-    <updated>2022-07-15T10:15:09.535Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;将网页变为app&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#将网页变为app&quot;&gt;&lt;/a&gt; 将网页变为APP&lt;/h1&gt;
-&lt;h2 id=&quot;install-the-tools&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="linux" scheme="http://www.halfstar.top/categories/linux/"/>
-    
-    
-    <category term=".desktop" scheme="http://www.halfstar.top/tags/desktop/"/>
-    
-    <category term="app" scheme="http://www.halfstar.top/tags/app/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jump</title>
-    <link href="http://www.halfstar.top/2022/07/14/jump/"/>
-    <id>http://www.halfstar.top/2022/07/14/jump/</id>
-    <published>2022-07-14T02:57:36.000Z</published>
-    <updated>2022-07-14T05:59:27.314Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;跳跃问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#跳跃问题&quot;&gt;&lt;/a&gt; 跳跃问题&lt;/h1&gt;
-&lt;p&gt;有一类常见的问题，在河上有n个点，求跳到某个位置所需要的最小步数或者是能否抵达&lt;br</summary>
-        
-      
-    
-    
-    
-    <category term="leetcode" scheme="http://www.halfstar.top/categories/leetcode/"/>
-    
-    
-    <category term="leetcode" scheme="http://www.halfstar.top/tags/leetcode/"/>
-    
-    <category term="algorithm" scheme="http://www.halfstar.top/tags/algorithm/"/>
     
   </entry>
   
