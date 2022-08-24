@@ -1,0 +1,166 @@
+<!DOCTYPE html><html lang="ch" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>C++ namespace解析 | HalfStar</title><meta name="keywords" content="语法"><meta name="author" content="jiajun-c"><meta name="copyright" content="jiajun-c"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="C++ namespace  1. 命名空间的创建  1. 显式创建 namespace [name] &amp;#123;content&amp;#125; 命名空间中可以只声明变量，在外部再进行实现 1234&#x2F;&#x2F; useless.h namespace useless &amp;#123;    void FOO();&amp;#125; 1234567891011121314151617&#x2F;&#x2F; main.h#include">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ namespace解析">
+<meta property="og:url" content="http://www.halfstar.top/2022/08/18/namespace/index.html">
+<meta property="og:site_name" content="HalfStar">
+<meta property="og:description" content="C++ namespace  1. 命名空间的创建  1. 显式创建 namespace [name] &amp;#123;content&amp;#125; 命名空间中可以只声明变量，在外部再进行实现 1234&#x2F;&#x2F; useless.h namespace useless &amp;#123;    void FOO();&amp;#125; 1234567891011121314151617&#x2F;&#x2F; main.h#include">
+<meta property="og:locale">
+<meta property="og:image" content="https://art.pixilart.com/sr28c6422db2e4f.gif">
+<meta property="article:published_time" content="2022-08-18T03:12:12.000Z">
+<meta property="article:modified_time" content="2022-08-18T13:34:39.764Z">
+<meta property="article:author" content="jiajun-c">
+<meta property="article:tag" content="语法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://art.pixilart.com/sr28c6422db2e4f.gif"><link rel="shortcut icon" href="/img/seaboy.jpg"><link rel="canonical" href="http://www.halfstar.top/2022/08/18/namespace/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'C++ namespace解析',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-08-18 22:34:39'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="HalfStar" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/seaboy.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">50</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">37</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">15</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://art.pixilart.com/sr28c6422db2e4f.gif')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">HalfStar</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">C++ namespace解析</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-08-18T03:12:12.000Z" title="Created 2022-08-18 12:12:12">2022-08-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-08-18T13:34:39.764Z" title="Updated 2022-08-18 22:34:39">2022-08-18</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/C/">C++</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="C++ namespace解析"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="c-namespace"><a class="markdownIt-Anchor" href="#c-namespace"></a> C++ namespace</h1>
+<h2 id="1-命名空间的创建"><a class="markdownIt-Anchor" href="#1-命名空间的创建"></a> 1. 命名空间的创建</h2>
+<h3 id="1-显式创建"><a class="markdownIt-Anchor" href="#1-显式创建"></a> 1. 显式创建</h3>
+<p><code>namespace [name] &#123;content&#125;</code><br />
+命名空间中可以只声明变量，在外部再进行实现</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// useless.h </span></span><br><span class="line"><span class="keyword">namespace</span> useless &#123;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">FOO</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main.h</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;useless.h&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> useless;</span><br><span class="line"><span class="keyword">namespace</span> s &#123;</span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">funcA</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;111&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">useless::FOO</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Foo&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    s::<span class="built_in">funcA</span>();</span><br><span class="line">    <span class="built_in">FOO</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-内联命名空间"><a class="markdownIt-Anchor" href="#2-内联命名空间"></a> 2. 内联命名空间</h3>
+<p>方便进行更新，后面的会对前面的函数进行覆盖。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">namespace</span> old_new &#123;</span><br><span class="line">    <span class="keyword">namespace</span> v1 &#123;</span><br><span class="line">        <span class="function"><span class="type">void</span> <span class="title">foo</span><span class="params">()</span> </span>&#123;<span class="built_in">printf</span>(<span class="string">&quot;V1&quot;</span>);&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">namespace</span> v2 &#123;</span><br><span class="line">        <span class="function"><span class="type">void</span> <span class="title">foo</span><span class="params">()</span> </span>&#123;<span class="built_in">printf</span>(<span class="string">&quot;V2&quot;</span>);&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-使用命名空间中的元素"><a class="markdownIt-Anchor" href="#2-使用命名空间中的元素"></a> 2. 使用命名空间中的元素</h2>
+<h3 id="1-完整使用"><a class="markdownIt-Anchor" href="#1-完整使用"></a> 1. 完整使用</h3>
+<p>如下所示创建一个对象</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useless::classA obj1;</span><br></pre></td></tr></table></figure>
+<h3 id="2-引用对象"><a class="markdownIt-Anchor" href="#2-引用对象"></a> 2. 引用对象</h3>
+<p>将命名空间中的classA引入进来，后面使用的时候可以进行直接的调用</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> useless:classA ;</span><br></pre></td></tr></table></figure>
+<h3 id="3-引入整个命名空间"><a class="markdownIt-Anchor" href="#3-引入整个命名空间"></a> 3. 引入整个命名空间</h3>
+<p>将整个命名空间引入进来就可以使用其中的所有成员</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> useless;</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">jiajun-c</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://www.halfstar.top/2022/08/18/namespace/">http://www.halfstar.top/2022/08/18/namespace/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AF%AD%E6%B3%95/">语法</a></div><div class="post_share"><div class="social-share" data-image="https://art.pixilart.com/sr28c6422db2e4f.gif" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/08/18/go_sort/"><img class="prev-cover" src="https://art.pixilart.com/sr20c27c819b610.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">go_sort</div></div></a></div><div class="next-post pull-right"><a href="/2022/08/17/leetcode132/"><img class="next-cover" src="https://art.pixilart.com/sr2a317e3e663cc.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">leetcode132</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2022/08/18/go_sort/" title="go_sort"><img class="cover" src="https://art.pixilart.com/sr20c27c819b610.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-18</div><div class="title">go_sort</div></div></a></div><div><a href="/2022/08/17/slice/" title="Go 语言切片"><img class="cover" src="https://art.pixilart.com/sr2b040bea9c213.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-17</div><div class="title">Go 语言切片</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/seaboy.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">jiajun-c</div><div class="author-info__description">geek never stop</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">50</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">37</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">15</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/jiajun-c"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="/atom.xml" target="_blank" title=""><i class="rss"></i></a><a class="social-icon" href="https://github.com/jiajun-c" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:chengjiajun20@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS链接"><i class="fa fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#c-namespace"><span class="toc-number">1.</span> <span class="toc-text"> C++ namespace</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-number">1.1.</span> <span class="toc-text"> 1. 命名空间的创建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%98%BE%E5%BC%8F%E5%88%9B%E5%BB%BA"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 1. 显式创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%86%85%E8%81%94%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 2. 内联命名空间</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-number">1.2.</span> <span class="toc-text"> 2. 使用命名空间中的元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AE%8C%E6%95%B4%E4%BD%BF%E7%94%A8"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 1. 完整使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%BC%95%E7%94%A8%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 2. 引用对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%BC%95%E5%85%A5%E6%95%B4%E4%B8%AA%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 3. 引入整个命名空间</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/08/20/single/" title="O(1) Space problem"><img src="https://art.pixilart.com/sr2a48637add8ff.gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="O(1) Space problem"/></a><div class="content"><a class="title" href="/2022/08/20/single/" title="O(1) Space problem">O(1) Space problem</a><time datetime="2022-08-20T03:12:12.000Z" title="Created 2022-08-20 12:12:12">2022-08-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/19/cs144lab3/" title="cs144lab3"><img src="https://art.pixilart.com/sizes/sr2004745532f3f_300.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cs144lab3"/></a><div class="content"><a class="title" href="/2022/08/19/cs144lab3/" title="cs144lab3">cs144lab3</a><time datetime="2022-08-19T03:12:12.000Z" title="Created 2022-08-19 12:12:12">2022-08-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/18/go_sort/" title="go_sort"><img src="https://art.pixilart.com/sr20c27c819b610.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="go_sort"/></a><div class="content"><a class="title" href="/2022/08/18/go_sort/" title="go_sort">go_sort</a><time datetime="2022-08-18T03:12:12.000Z" title="Created 2022-08-18 12:12:12">2022-08-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/18/namespace/" title="C++ namespace解析"><img src="https://art.pixilart.com/sr28c6422db2e4f.gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ namespace解析"/></a><div class="content"><a class="title" href="/2022/08/18/namespace/" title="C++ namespace解析">C++ namespace解析</a><time datetime="2022-08-18T03:12:12.000Z" title="Created 2022-08-18 12:12:12">2022-08-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/17/leetcode132/" title="leetcode132"><img src="https://art.pixilart.com/sr2a317e3e663cc.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="leetcode132"/></a><div class="content"><a class="title" href="/2022/08/17/leetcode132/" title="leetcode132">leetcode132</a><time datetime="2022-08-17T03:12:12.000Z" title="Created 2022-08-17 12:12:12">2022-08-17</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By jiajun-c</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -6,7 +6,7 @@
   <link href="http://www.halfstar.top/atom.xml" rel="self"/>
   
   <link href="http://www.halfstar.top/"/>
-  <updated>2022-08-17T12:23:09.580Z</updated>
+  <updated>2022-08-20T03:27:46.628Z</updated>
   <id>http://www.halfstar.top/</id>
   
   <author>
@@ -15,6 +15,110 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>O(1) Space problem</title>
+    <link href="http://www.halfstar.top/2022/08/20/single/"/>
+    <id>http://www.halfstar.top/2022/08/20/single/</id>
+    <published>2022-08-20T03:12:12.000Z</published>
+    <updated>2022-08-20T03:27:46.628Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;single-number&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#single-number&quot;&gt;&lt;/a&gt; &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="leetcode" scheme="http://www.halfstar.top/categories/leetcode/"/>
+    
+    
+    <category term="algorithm" scheme="http://www.halfstar.top/tags/algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>cs144lab3</title>
+    <link href="http://www.halfstar.top/2022/08/19/cs144lab3/"/>
+    <id>http://www.halfstar.top/2022/08/19/cs144lab3/</id>
+    <published>2022-08-19T03:12:12.000Z</published>
+    <updated>2022-08-19T05:28:11.951Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;cs144-lab3&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#cs144-lab3&quot;&gt;&lt;/a&gt; CS144 lab3&lt;/h1&gt;
+&lt;p&gt;Lab3的任务是实现一个TCPsender。&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="cs144" scheme="http://www.halfstar.top/categories/cs144/"/>
+    
+    
+    <category term="lab" scheme="http://www.halfstar.top/tags/lab/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>go_sort</title>
+    <link href="http://www.halfstar.top/2022/08/18/go_sort/"/>
+    <id>http://www.halfstar.top/2022/08/18/go_sort/</id>
+    <published>2022-08-18T03:12:12.000Z</published>
+    <updated>2022-08-18T09:24:46.225Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;go-语言排序&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#go-语言排序&quot;&gt;&lt;/a&gt; Go 语言排序&lt;/h1&gt;
+&lt;h2 id=&quot;1-基本使用&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="go" scheme="http://www.halfstar.top/categories/go/"/>
+    
+    
+    <category term="语法" scheme="http://www.halfstar.top/tags/%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++ namespace解析</title>
+    <link href="http://www.halfstar.top/2022/08/18/namespace/"/>
+    <id>http://www.halfstar.top/2022/08/18/namespace/</id>
+    <published>2022-08-18T03:12:12.000Z</published>
+    <updated>2022-08-18T13:34:39.764Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;c-namespace&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#c-namespace&quot;&gt;&lt;/a&gt; C++ namespace&lt;/h1&gt;
+&lt;h2 id=&quot;1-命名空间的创建&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="C++" scheme="http://www.halfstar.top/categories/C/"/>
+    
+    
+    <category term="语法" scheme="http://www.halfstar.top/tags/%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>leetcode132</title>
@@ -434,109 +538,6 @@
     
     
     <category term="csapp" scheme="http://www.halfstar.top/tags/csapp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>all of the subsets</title>
-    <link href="http://www.halfstar.top/2022/07/17/two/"/>
-    <id>http://www.halfstar.top/2022/07/17/two/</id>
-    <published>2022-07-17T03:12:12.000Z</published>
-    <updated>2022-07-17T10:36:12.631Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;get-all-of-the-subsets-of-the-set&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#get-all-of-the-subsets-of-the-set&quot;&gt;&lt;/a&gt; Get all of the</summary>
-        
-      
-    
-    
-    
-    <category term="algorithm" scheme="http://www.halfstar.top/categories/algorithm/"/>
-    
-    
-    <category term="math" scheme="http://www.halfstar.top/tags/math/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Permutation</title>
-    <link href="http://www.halfstar.top/2022/07/16/Permutation/"/>
-    <id>http://www.halfstar.top/2022/07/16/Permutation/</id>
-    <published>2022-07-16T03:12:12.000Z</published>
-    <updated>2022-07-16T07:44:16.349Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;排列组合&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#排列组合&quot;&gt;&lt;/a&gt; 排列组合&lt;/h1&gt;
-&lt;h2 id=&quot;1-全排列&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#1-全排列&quot;&gt;&lt;/a&gt; 1.</summary>
-        
-      
-    
-    
-    
-    <category term="algoritm" scheme="http://www.halfstar.top/categories/algoritm/"/>
-    
-    
-    <category term="全排列" scheme="http://www.halfstar.top/tags/%E5%85%A8%E6%8E%92%E5%88%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>latex</title>
-    <link href="http://www.halfstar.top/2022/07/15/latex/"/>
-    <id>http://www.halfstar.top/2022/07/15/latex/</id>
-    <published>2022-07-15T09:12:12.000Z</published>
-    <updated>2022-07-15T11:36:34.305Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;latex-模块化模板&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#latex-模块化模板&quot;&gt;&lt;/a&gt; Latex 模块化模板&lt;/h1&gt;
-&lt;h2 id=&quot;整体效果预览&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="latex" scheme="http://www.halfstar.top/categories/latex/"/>
-    
-    
-    <category term="paper" scheme="http://www.halfstar.top/tags/paper/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>cmu15-445_lab0</title>
-    <link href="http://www.halfstar.top/2022/07/15/cmu15-445_lab0/"/>
-    <id>http://www.halfstar.top/2022/07/15/cmu15-445_lab0/</id>
-    <published>2022-07-15T03:33:33.000Z</published>
-    <updated>2022-07-15T06:34:47.107Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;cmu15-445_lab0-c-primer&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#cmu15-445_lab0-c-primer&quot;&gt;&lt;/a&gt; CMU15-445_lab0 C++ primer&lt;/h1&gt;
-&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="lab" scheme="http://www.halfstar.top/categories/lab/"/>
-    
-    
-    <category term="cmu15-445" scheme="http://www.halfstar.top/tags/cmu15-445/"/>
     
   </entry>
   
