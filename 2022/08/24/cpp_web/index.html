@@ -1,0 +1,217 @@
+<!DOCTYPE html><html lang="ch" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>C++ 网络编程 | HalfStar</title><meta name="keywords" content="C++ linux"><meta name="author" content="jiajun-c"><meta name="copyright" content="jiajun-c"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="C++ 网络编程  1. socket概念 socket是一种进程通信机制，被称为是套接字，引入一个标准名字空间进行进程之间的通信。 socket相当于是在传输层协议TCP&#x2F;UDP之上的一层抽象层级更高的协议，方便应用程序进行使用。 socket主要使用在客户&#x2F;服务器模型而设计的，针对客户和服务器程序需要提供不同的socket系统调用，运行在 客户端的被称为是clientSocket，运行在服务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ 网络编程">
+<meta property="og:url" content="http://www.halfstar.top/2022/08/24/cpp_web/index.html">
+<meta property="og:site_name" content="HalfStar">
+<meta property="og:description" content="C++ 网络编程  1. socket概念 socket是一种进程通信机制，被称为是套接字，引入一个标准名字空间进行进程之间的通信。 socket相当于是在传输层协议TCP&#x2F;UDP之上的一层抽象层级更高的协议，方便应用程序进行使用。 socket主要使用在客户&#x2F;服务器模型而设计的，针对客户和服务器程序需要提供不同的socket系统调用，运行在 客户端的被称为是clientSocket，运行在服务">
+<meta property="og:locale">
+<meta property="og:image" content="https://art.pixilart.com/sr29720b1cb54a8.gif">
+<meta property="article:published_time" content="2022-08-24T03:12:12.000Z">
+<meta property="article:modified_time" content="2022-08-24T13:28:54.587Z">
+<meta property="article:author" content="jiajun-c">
+<meta property="article:tag" content="C++ linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://art.pixilart.com/sr29720b1cb54a8.gif"><link rel="shortcut icon" href="/img/seaboy.jpg"><link rel="canonical" href="http://www.halfstar.top/2022/08/24/cpp_web/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'C++ 网络编程',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-08-24 22:28:54'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="HalfStar" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/seaboy.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">52</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">38</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">16</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://art.pixilart.com/sr29720b1cb54a8.gif')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">HalfStar</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">C++ 网络编程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-08-24T03:12:12.000Z" title="Created 2022-08-24 12:12:12">2022-08-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-08-24T13:28:54.587Z" title="Updated 2022-08-24 22:28:54">2022-08-24</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/net/">net</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="C++ 网络编程"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="c-网络编程"><a class="markdownIt-Anchor" href="#c-网络编程"></a> C++ 网络编程</h1>
+<h2 id="1-socket概念"><a class="markdownIt-Anchor" href="#1-socket概念"></a> 1. socket概念</h2>
+<p>socket是一种进程通信机制，被称为是套接字，引入一个标准名字空间进行进程之间的通信。</p>
+<p>socket相当于是在传输层协议TCP/UDP之上的一层抽象层级更高的协议，方便应用程序进行使用。</p>
+<p>socket主要使用在客户/服务器模型而设计的，针对客户和服务器程序需要提供不同的socket系统调用，运行在<br />
+客户端的被称为是<code>clientSocket</code>，运行在服务器端的是<code>serverSocket</code></p>
+<p>套接字之间的连接主要分为三个步骤</p>
+<ol>
+<li>服务器监听：服务器端套接字不定位具体的客户端套接字，而是处于等待的状态，实时监控网络状态</li>
+<li>客户端请求：是指客户端的套接字提出连接请求，要连接的目标是服务器端的套接字。<br />
+为此客户端的套接字必须描述其要连接的服务器的套接字，指出服务器套接字的地址和端口号，然后<br />
+提出连接请求</li>
+<li>连接确认：是指当服务器套接字监听到或者说接收到客户端套接字的连接请求，就响应客户端<br />
+套接字的请求，建立一个新的进程，把服务器套接字的描述发送给客户端，一旦客户端确认了次描述<br />
+连接就建立完成。</li>
+</ol>
+<p><img src="https://upload-images.jianshu.io/upload_images/669609-b8a1134b6fe3d028.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp" alt="img" /></p>
+<h2 id="2-socket-函数"><a class="markdownIt-Anchor" href="#2-socket-函数"></a> 2. socket 函数</h2>
+<p>函数原型</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">socket</span><span class="params">(<span class="type">int</span> domain, <span class="type">int</span> type, <span class="type">int</span> protocol)</span></span>;</span><br></pre></td></tr></table></figure>
+<p><code>domain</code><br />
+<img src="https://s2.loli.net/2022/08/24/tdVfcQl8aFH9yEK.png" alt="" /></p>
+<p><code>type</code><br />
+<img src="https://s2.loli.net/2022/08/24/G3HXUYySvF65CPW.png" alt="" /></p>
+<p>protocol 一般情况下都只能设置为0</p>
+<p>对于socket地址结构体为<code>sockaddr_in</code><br />
+<code>sockaddr_in</code>的结构如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">sockaddr_in</span></span><br><span class="line">  &#123;</span><br><span class="line">    __SOCKADDR_COMMON (sin_);</span><br><span class="line">    <span class="type">in_port_t</span> sin_port;			<span class="comment">/* Port number.  */</span></span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">in_addr</span> sin_addr;		<span class="comment">/* Internet address.  */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Pad to size of `struct sockaddr&#x27;.  */</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> sin_zero[<span class="built_in">sizeof</span> (<span class="keyword">struct</span> sockaddr)</span><br><span class="line">			   - __SOCKADDR_COMMON_SIZE</span><br><span class="line">			   - <span class="built_in">sizeof</span> (<span class="type">in_port_t</span>)</span><br><span class="line">			   - <span class="built_in">sizeof</span> (<span class="keyword">struct</span> in_addr)];</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
+<p><code>__SOCKADDR_COMMON</code>其实就是<code>sin_family</code>表示其是地址族。</p>
+<p><code>in_port_t</code> 表示是端口号</p>
+<p><code>in_addr</code> 中是ip地址</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">uint32_t</span> <span class="type">in_addr_t</span>;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">in_addr</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="type">in_addr_t</span> s_addr;</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="2-echo-服务器实现"><a class="markdownIt-Anchor" href="#2-echo-服务器实现"></a> 2. echo 服务器实现</h2>
+<h3 id="21-server"><a class="markdownIt-Anchor" href="#21-server"></a> 2.1 server</h3>
+<p>对于server主要分为个部分</p>
+<ul>
+<li>创建套接字</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sockaddr_in server_addr;</span><br><span class="line">    <span class="type">char</span> buf[BUFSIZE];</span><br><span class="line">    serverfd = <span class="built_in">socket</span>(AF_INET, SOCK_STREAM, <span class="number">0</span>); <span class="comment">// 返回描述符</span></span><br><span class="line">    <span class="keyword">if</span> (serverfd == <span class="number">-1</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Create socket error(%d):%s\n&quot;</span>,errno, <span class="built_in">strerror</span>(errno));</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">bzero</span>(&amp;server_addr, <span class="built_in">sizeof</span>(server_addr));</span><br></pre></td></tr></table></figure>
+<ul>
+<li>配置套接字</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">server_addr.sin_family = AF_INET; <span class="comment">// 使用ipv4协议</span></span><br><span class="line">server_addr.sin_port = <span class="built_in">htons</span>(DEFAULT_PORT); <span class="comment">// 使用默认的端口</span></span><br><span class="line">server_addr.sin_addr.s_addr = <span class="built_in">htonl</span>(INADDR_ANY); <span class="comment">// 接收任何连接</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>绑定，将地址给套接字的文件描述符</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">bind</span><span class="params">(<span class="type">int</span> socket, <span class="type">const</span> <span class="keyword">struct</span> sockaddr *address,<span class="type">socklen_t</span> address_len)</span></span>;</span><br></pre></td></tr></table></figure>
+<p><code>socket</code>: <code>socket</code>的文件描述符<br />
+<code>address</code>：<code>sockaddr</code>类型的地址<br />
+<code>address_len</code>:<code>sockaddr</code>的长度</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="built_in">bind</span>(serverfd, (sockaddr*)&amp;server_addr, <span class="built_in">sizeof</span>(server_addr))== <span class="number">-1</span>) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Bind error(%d): %s\n&quot;</span>,errno, <span class="built_in">strerror</span>(errno));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>监听端口<br />
+监听某个套接字同时限制连接的数目。</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="built_in">listen</span>(serverfd, MAXLINK) == <span class="number">-1</span>) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Listen error(%d): %s\n&quot;</span>, errno, <span class="built_in">strerror</span>(errno));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>循环处理，进行处理</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">accept</span><span class="params">(<span class="type">int</span> socket, <span class="keyword">struct</span> sockaddr *restrict address,<span class="type">socklen_t</span> *restrict address_len)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>接收来自套接字的一个新的连接，<code>address</code>中存储的是连接的<code>sockaddr</code>返回地址，<code>address_len</code><br />
+输入提供的返回地址的长度。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">ssize_t</span> <span class="title">recv</span><span class="params">(<span class="type">int</span> socket, <span class="type">void</span> *buffer, <span class="type">size_t</span> length, <span class="type">int</span> flags)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>从套接字中获取数据，flag设置为0即可</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">ssize_t</span> <span class="title">send</span><span class="params">(<span class="type">int</span> socket, <span class="type">const</span> <span class="type">void</span> *buffer, <span class="type">size_t</span> length, <span class="type">int</span> flags)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>发送数据</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/* code */</span></span><br><span class="line">    <span class="built_in">signal</span>(SIGINT, stopServer);</span><br><span class="line">    clientfd = <span class="built_in">accept</span>(serverfd, <span class="literal">NULL</span>, <span class="literal">NULL</span>);</span><br><span class="line">    <span class="keyword">if</span> (clientfd == <span class="number">-1</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Accept error(%d):%s\n&quot;</span>,errno, <span class="built_in">strerror</span>(errno));</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">bzero</span>(buf, BUFSIZE);</span><br><span class="line">    <span class="built_in">recv</span>(clientfd, buf, BUFSIZE<span class="number">-1</span>, <span class="number">0</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Recv: %s\n&quot;</span>,buf);</span><br><span class="line">    <span class="built_in">send</span>(clientfd, buf, <span class="built_in">strlen</span>(buf), <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">close</span>(clientfd);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="22-clinet"><a class="markdownIt-Anchor" href="#22-clinet"></a> 2.2 clinet</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;error.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/errno.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;netinet/in.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;signal.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;netinet/in.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;arpa/inet.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> BUFSIZE 2048</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SERVER_IP <span class="string">&quot;127.0.0.1&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SERVER_PORT 8888</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    sockaddr_in server_addr;</span><br><span class="line">    <span class="type">char</span> buf[BUFSIZE];</span><br><span class="line">    <span class="type">int</span> clientfd = <span class="built_in">socket</span>(AF_INET, SOCK_STREAM, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">if</span> (clientfd == <span class="number">-1</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Create socket error(%d):%s\n&quot;</span>, errno, <span class="built_in">strerror</span>(errno));</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">bzero</span>(&amp;server_addr, <span class="built_in">sizeof</span>(server_addr));</span><br><span class="line">    server_addr.sin_family = AF_INET;</span><br><span class="line">    <span class="built_in">inet_pton</span>(AF_INET, SERVER_IP, &amp;server_addr.sin_addr);</span><br><span class="line">    server_addr.sin_port = <span class="built_in">htons</span>(SERVER_PORT);</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">connect</span>(clientfd, (sockaddr*)&amp;server_addr,<span class="built_in">sizeof</span>(server_addr))==<span class="number">-1</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Connect error (%d):%s\n&quot;</span>,errno, <span class="built_in">strerror</span>(errno));</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Please input:&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,&amp;buf);</span><br><span class="line">    <span class="built_in">send</span>(clientfd, buf, <span class="built_in">strlen</span>(buf),<span class="number">0</span>);</span><br><span class="line">     <span class="built_in">bzero</span>(buf, <span class="built_in">sizeof</span>(buf));</span><br><span class="line">    <span class="built_in">recv</span>(clientfd, buf, BUFSIZE - <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Recv: %s\n&quot;</span>, buf);</span><br><span class="line">    <span class="built_in">close</span>(clientfd);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="23-test"><a class="markdownIt-Anchor" href="#23-test"></a> 2.3 test</h3>
+<p><img src="https://s2.loli.net/2022/08/24/yKrQ1V7TeZRDcpI.png" alt="img" /></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">jiajun-c</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://www.halfstar.top/2022/08/24/cpp_web/">http://www.halfstar.top/2022/08/24/cpp_web/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/C-linux/">C++ linux</a></div><div class="post_share"><div class="social-share" data-image="https://art.pixilart.com/sr29720b1cb54a8.gif" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/08/24/sortlist/"><img class="prev-cover" src="https://art.pixilart.com/sizes/sr29a2fe43bc128_300.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">链表排序</div></div></a></div><div class="next-post pull-right"><a href="/2022/08/20/single/"><img class="next-cover" src="https://art.pixilart.com/sr2a48637add8ff.gif" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">O(1) Space problem</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/seaboy.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">jiajun-c</div><div class="author-info__description">geek never stop</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">52</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">38</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">16</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/jiajun-c"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="/atom.xml" target="_blank" title=""><i class="rss"></i></a><a class="social-icon" href="https://github.com/jiajun-c" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:chengjiajun20@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS链接"><i class="fa fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#c-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text"> C++ 网络编程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-socket%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text"> 1. socket概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-socket-%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.</span> <span class="toc-text"> 2. socket 函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-echo-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.3.</span> <span class="toc-text"> 2. echo 服务器实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-server"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 2.1 server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-clinet"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 2.2 clinet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23-test"><span class="toc-number">1.3.3.</span> <span class="toc-text"> 2.3 test</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/08/24/sortlist/" title="链表排序"><img src="https://art.pixilart.com/sizes/sr29a2fe43bc128_300.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="链表排序"/></a><div class="content"><a class="title" href="/2022/08/24/sortlist/" title="链表排序">链表排序</a><time datetime="2022-08-24T15:00:00.000Z" title="Created 2022-08-25 00:00:00">2022-08-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/24/cpp_web/" title="C++ 网络编程"><img src="https://art.pixilart.com/sr29720b1cb54a8.gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ 网络编程"/></a><div class="content"><a class="title" href="/2022/08/24/cpp_web/" title="C++ 网络编程">C++ 网络编程</a><time datetime="2022-08-24T03:12:12.000Z" title="Created 2022-08-24 12:12:12">2022-08-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/20/single/" title="O(1) Space problem"><img src="https://art.pixilart.com/sr2a48637add8ff.gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="O(1) Space problem"/></a><div class="content"><a class="title" href="/2022/08/20/single/" title="O(1) Space problem">O(1) Space problem</a><time datetime="2022-08-20T03:12:12.000Z" title="Created 2022-08-20 12:12:12">2022-08-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/19/cs144lab3/" title="cs144lab3"><img src="https://art.pixilart.com/sizes/sr2004745532f3f_300.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cs144lab3"/></a><div class="content"><a class="title" href="/2022/08/19/cs144lab3/" title="cs144lab3">cs144lab3</a><time datetime="2022-08-19T03:12:12.000Z" title="Created 2022-08-19 12:12:12">2022-08-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/18/go_sort/" title="go_sort"><img src="https://art.pixilart.com/sr20c27c819b610.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="go_sort"/></a><div class="content"><a class="title" href="/2022/08/18/go_sort/" title="go_sort">go_sort</a><time datetime="2022-08-18T03:12:12.000Z" title="Created 2022-08-18 12:12:12">2022-08-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By jiajun-c</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
