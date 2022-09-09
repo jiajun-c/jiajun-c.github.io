@@ -6,7 +6,7 @@
   <link href="http://www.halfstar.top/atom.xml" rel="self"/>
   
   <link href="http://www.halfstar.top/"/>
-  <updated>2022-09-04T10:49:28.360Z</updated>
+  <updated>2022-09-09T14:45:05.869Z</updated>
   <id>http://www.halfstar.top/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CS144 lab1</title>
+    <link href="http://www.halfstar.top/2022/09/09/lab1/"/>
+    <id>http://www.halfstar.top/2022/09/09/lab1/</id>
+    <published>2022-09-09T12:08:16.000Z</published>
+    <updated>2022-09-09T14:45:05.869Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;cs144-lab1&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#cs144-lab1&quot;&gt;&lt;/a&gt; CS144 lab1&lt;/h1&gt;
+&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;p&gt;先放一张经典的图… Do you see the lab1 work</summary>
+        
+      
+    
+    
+    
+    <category term="lab" scheme="http://www.halfstar.top/categories/lab/"/>
+    
+    
+    <category term="network" scheme="http://www.halfstar.top/tags/network/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Archlinux 打包规则</title>
+    <link href="http://www.halfstar.top/2022/09/07/pkgbuild/"/>
+    <id>http://www.halfstar.top/2022/09/07/pkgbuild/</id>
+    <published>2022-09-07T15:00:00.000Z</published>
+    <updated>2022-09-08T02:53:12.127Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;archlinux-打包规则&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#archlinux-打包规则&quot;&gt;&lt;/a&gt; Archlinux 打包规则&lt;/h1&gt;
+&lt;h2 id=&quot;1-创建pkgbuild&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="linux" scheme="http://www.halfstar.top/categories/linux/"/>
+    
+    
+    <category term="archlinux package" scheme="http://www.halfstar.top/tags/archlinux-package/"/>
+    
+  </entry>
   
   <entry>
     <title>子网规划和地址规划</title>
@@ -478,58 +531,6 @@
     
     
     <category term="leetcode" scheme="http://www.halfstar.top/tags/leetcode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>docker</title>
-    <link href="http://www.halfstar.top/2022/08/02/docker/"/>
-    <id>http://www.halfstar.top/2022/08/02/docker/</id>
-    <published>2022-08-02T03:12:12.000Z</published>
-    <updated>2022-08-03T09:14:52.420Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;docker-入门&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#docker-入门&quot;&gt;&lt;/a&gt; docker 入门&lt;/h1&gt;
-&lt;h2 id=&quot;docker架构&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="web" scheme="http://www.halfstar.top/categories/web/"/>
-    
-    
-    <category term="docker" scheme="http://www.halfstar.top/tags/docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux ls实现</title>
-    <link href="http://www.halfstar.top/2022/08/01/ls/"/>
-    <id>http://www.halfstar.top/2022/08/01/ls/</id>
-    <published>2022-08-01T03:12:12.000Z</published>
-    <updated>2022-08-02T15:03:22.598Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;linux-ls-命令实现&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#linux-ls-命令实现&quot;&gt;&lt;/a&gt; linux ls 命令实现&lt;/h1&gt;
-&lt;h2 id=&quot;1-前置知识&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="linux" scheme="http://www.halfstar.top/categories/linux/"/>
-    
-    
-    <category term="terminal" scheme="http://www.halfstar.top/tags/terminal/"/>
     
   </entry>
   
