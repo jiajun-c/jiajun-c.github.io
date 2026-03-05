@@ -206,15 +206,14 @@ const catHandler = (args: string[]): CommandResult => {
 
   const output: string[] = [''];
 
-  // 文章标题
-  output.push('  ' + '═'.repeat(60));
+  // 文章标题 - 使用特殊标记
+  output.push(`__TITLE_START__`);
   output.push(`  ${post.title}`);
-  output.push('  ' + '─'.repeat(60));
+  output.push(`__TITLE_END__`);
   output.push('');
   output.push(`  Date: ${post.date}`);
   output.push(`  Category: ${post.category}`);
   output.push(`  Tags: ${post.tags.join(', ')}`);
-  output.push('  ' + '─'.repeat(60));
   output.push('');
 
   // 渲染内容
@@ -277,7 +276,6 @@ const catHandler = (args: string[]): CommandResult => {
   }
 
   output.push('');
-  output.push('  ' + '═'.repeat(60));
 
   return {
     type: 'success',

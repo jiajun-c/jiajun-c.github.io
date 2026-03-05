@@ -428,60 +428,69 @@ export default function Terminal({
                       }
                     }
 
-                    // 代码块开始（上边框）
+                    // 代码块开始（上边框）- 隐藏显示
                     if (typeof c === 'string' && c.startsWith('  ┌─') && c.includes('┐')) {
-                      return (
-                        <div key={i} className="text-gray-500 font-mono text-xs leading-none">
-                          {c}
-                        </div>
-                      );
+                      return null;
                     }
 
-                    // 代码块语言标题
+                    // 代码块语言标题 - 使用更简洁的样式
                     if (typeof c === 'string' && c.startsWith('  │') && c.includes('Code:')) {
+                      const langMatch = c.match(/Code:\s*(\w+)/);
+                      const lang = langMatch ? langMatch[1] : 'code';
                       return (
-                        <div key={i} className="text-cyan-400 font-mono text-xs bg-gray-900/80 px-2">
-                          {c}
+                        <div key={i} className="text-cyan-400 font-mono text-xs bg-gray-800/80 px-3 py-1.5 rounded-t-md border-b border-gray-700">
+                          {lang}
                         </div>
                       );
                     }
 
-                    // 代码块分隔线
+                    // 代码块分隔线 - 隐藏显示
                     if (typeof c === 'string' && c.startsWith('  ├─') && c.includes('┤')) {
-                      return (
-                        <div key={i} className="text-gray-500 font-mono text-xs leading-none">
-                          {c}
-                        </div>
-                      );
+                      return null;
                     }
 
                     // 代码块内容行（带 │ 边框）
                     if (typeof c === 'string' && c.startsWith('  │ ') && c.endsWith('│') && !c.includes('Code:')) {
                       const codeContent = c.slice(3, -1);
+                      // 跳过空的边框行
+                      if (!codeContent.trim()) {
+                        return null;
+                      }
                       // 如果包含 HTML 标签，使用 dangerouslySetInnerHTML
                       if (codeContent.includes('<span')) {
                         return (
                           <div
                             key={i}
-                            className="font-mono text-xs bg-gray-900/60 px-2 py-0.5 leading-relaxed"
+                            className="font-mono text-xs bg-gray-900 px-3 py-0.5"
                             dangerouslySetInnerHTML={{ __html: codeContent.trimEnd() }}
                           />
                         );
                       }
                       return (
-                        <div key={i} className="text-green-300 font-mono text-xs bg-gray-900/60 px-2 py-0.5 leading-relaxed">
+                        <div key={i} className="text-green-300 font-mono text-xs bg-gray-900 px-3 py-0.5">
                           {codeContent.trimEnd()}
                         </div>
                       );
                     }
 
-                    // 代码块结束（下边框）
+                    // 代码块结束（下边框）- 隐藏显示
                     if (typeof c === 'string' && c.startsWith('  └─') && c.includes('┘')) {
-                      return (
-                        <div key={i} className="text-gray-500 font-mono text-xs leading-none">
-                          {c}
-                        </div>
-                      );
+                      return null;
+                    }
+
+                    // 隐藏文章装饰线（═ 和 ─ 开头的行）
+                    if (typeof c === 'string' && /^[ ═─]+$/.test(c) && c.length > 10) {
+                      return null;
+                    }
+
+                    // 文章标题开始标记 - 隐藏
+                    if (typeof c === 'string' && c === '__TITLE_START__') {
+                      return null;
+                    }
+
+                    // 文章标题结束标记 - 隐藏
+                    if (typeof c === 'string' && c === '__TITLE_END__') {
+                      return null;
                     }
 
                     // 解析格式化标记
