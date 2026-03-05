@@ -129,15 +129,12 @@ export function renderMarkdown(content: string): { lines: string[]; images: Imag
     if (line.startsWith('### ')) {
       result.push('');
       result.push(`__H3__${line.slice(3)}__H3END__`);
-      result.push('  ' + '-'.repeat(line.slice(3).length));
     } else if (line.startsWith('## ')) {
       result.push('');
       result.push(`__H2__${line.slice(2)}__H2END__`);
-      result.push('  ' + '='.repeat(line.slice(2).length));
     } else if (line.startsWith('# ')) {
       result.push('');
       result.push(`__H1__${line.slice(1).toUpperCase()}__H1END__`);
-      result.push('  ' + '='.repeat(line.slice(1).length));
     }
     // 引用
     else if (line.startsWith('> ')) {
