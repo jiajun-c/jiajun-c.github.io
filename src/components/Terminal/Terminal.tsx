@@ -186,7 +186,7 @@ export default function Terminal({
             setInputValue(matches[0]);
           } else if (matches.length > 1) {
             // 显示所有匹配的命令
-            const prompt = `${username}@${hostname}:${getFullPath()}$`;
+            const prompt = getPromptString();
             setLines((prev) => [
               ...prev,
               { type: 'input', content: inputValue, path: prompt },
@@ -232,7 +232,7 @@ export default function Terminal({
             setInputValue(`${command} ${matches[0]}`);
           } else if (matches.length > 1) {
             // 显示所有匹配的选项
-            const prompt = `${username}@${hostname}:${getFullPath()}$`;
+            const prompt = getPromptString();
             setLines((prev) => [
               ...prev,
               { type: 'input', content: inputValue, path: prompt },
@@ -257,7 +257,7 @@ export default function Terminal({
           const result = executeCommand(command);
 
           // 添加输入行
-          const prompt = `${username}@${hostname}:${getFullPath()}$`;
+          const prompt = getPromptString();
           setLines((prev) => [
             ...prev,
             { type: 'input', content: command, path: prompt },
@@ -300,14 +300,14 @@ export default function Terminal({
           }
         } else {
           // 空命令只显示提示符
-          const prompt = `${username}@${hostname}:${getFullPath()}$`;
+          const prompt = getPromptString();
           setLines((prev) => [...prev, { type: 'input', content: '', path: prompt }]);
         }
 
         setInputValue('');
       } else if (e.key === 'c' && e.ctrlKey) {
         e.preventDefault();
-        const prompt = `${username}@${hostname}:${getFullPath()}$`;
+        const prompt = getPromptString();
         setLines((prev) => [
           ...prev,
           { type: 'input', content: inputValue + '^C', path: prompt },
@@ -318,7 +318,26 @@ export default function Terminal({
     [inputValue, commandHistory, historyIndex, username, hostname, lines, isSelecting, selectableItems, selectedIndex]
   );
 
-  const prompt = `${username}@${hostname}:${getFullPath()}$`;
+  // 生成炫酷的提示符（字符串版本，用于命令历史）
+  const getPromptString = () => {
+    const path = getFullPath() || '~';
+    return `❯ ${path} │ ⟠`;
+  };
+
+  // 生成炫酷的提示符（JSX 版本，用于渲染）
+  const getPromptPath = () => {
+    const path = getFullPath();
+    return (
+      <span className="flex items-center gap-2">
+        <span className="text-purple-400 font-bold">❯</span>
+        <span className="text-cyan-400 font-bold">{path || '~'}</span>
+        <span className="text-gray-500">│</span>
+        <span className="text-green-400 font-bold">⟠</span>
+      </span>
+    );
+  };
+
+  const prompt = getPromptPath();
 
   return (
     <div
@@ -354,11 +373,14 @@ export default function Terminal({
 
             if (line.type === 'input') {
               return (
-                <div key={index} className="flex flex-wrap">
-                  <span className="text-blue-400 whitespace-nowrap mr-2">
-                    {line.path}
+                <div key={index} className="flex flex-wrap items-center">
+                  <span className="text-purple-400 font-bold mr-2">❯</span>
+                  <span className="text-cyan-400 font-bold whitespace-nowrap mr-2">
+                    {typeof line.path === 'string' ? line.path.replace(/❯ /, '').replace(/ \| ⟠/, '') || '~' : line.path}
                   </span>
-                  <span className="text-green-400">{line.content}</span>
+                  <span className="text-gray-500 mr-2">│</span>
+                  <span className="text-green-400 font-bold mr-2">⟠</span>
+                  <span className="text-green-300">{line.content}</span>
                 </div>
               );
             }
@@ -599,7 +621,12 @@ export default function Terminal({
 
           {/* 当前输入行 */}
           <div className="flex flex-wrap items-center gap-3 mt-6 pt-4 border-t border-gray-700/60">
-            <span className="text-emerald-400 font-bold whitespace-nowrap text-sm md:text-base tracking-wide" style={{ textShadow: '0 0 10px rgba(52, 211, 153, 0.5)' }}>{prompt}</span>
+            <span className="flex items-center gap-2">
+              <span className="text-purple-400 font-bold">❯</span>
+              <span className="text-cyan-400 font-bold">{getFullPath() || '~'}</span>
+              <span className="text-gray-500">│</span>
+              <span className="text-green-400 font-bold">⟠</span>
+            </span>
             <span className="text-green-300 flex items-center bg-gray-900/70 px-3 py-1.5 rounded-md border border-gray-700/50 shadow-inner min-w-[200px]">
               {isSelecting ? (
                 <span className="text-yellow-400">
