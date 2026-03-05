@@ -11,6 +11,10 @@ export const AVAILABLE_COMMANDS = [
   'search',
   'history',
   'imgview',
+  'theme',
+  'neofetch',
+  'matrix',
+  'clock',
 ] as const;
 
 export type CommandName = typeof AVAILABLE_COMMANDS[number];

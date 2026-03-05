@@ -12,6 +12,11 @@ import './commands/pwd'
 import './commands/clear'
 import './commands/search'
 import './commands/history'
+import './commands/imgview'
+import './commands/theme'
+import './commands/neofetch'
+import './commands/matrix'
+import './commands/clock'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
