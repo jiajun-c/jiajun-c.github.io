@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+/* 终端风格基础样式 */
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #374151 #111827;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #111827;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #374151;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4b5563;
+  }
+}
+
+@layer components {
+  /* 终端光标闪烁动画 */
+  .terminal-cursor {
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  /* 代码块样式 */
+  .code-block {
+    @apply bg-gray-900 text-gray-100 p-4 rounded my-2 overflow-x-auto;
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  }
+
+  /* 代码高亮样式 */
+  .code-keyword {
+    color: #c084fc !important;
+    font-weight: 600;
+  }
+
+  .code-string {
+    color: #4ade80 !important;
+  }
+
+  .code-comment {
+    color: #6b7280 !important;
+    font-style: italic;
+  }
+
+  .code-number {
+    color: #fb923c !important;
+  }
+
+  .code-fn {
+    color: #60a5fa !important;
+  }
+
+  /* 终端链接样式 */
+  .terminal-link {
+    @apply text-blue-400 hover:text-blue-300 underline cursor-pointer;
+  }
+}
+
+/* 等宽字体 */
+@font-face {
+  font-family: 'Fira Code';
+  font-display: swap;
+  src: local('Fira Code'), local('FiraCode-Regular');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-display: swap;
+  src: local('JetBrains Mono'), local('JetBrainsMono-Regular');
+}
