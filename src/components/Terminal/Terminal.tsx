@@ -422,7 +422,7 @@ export default function Terminal({
             // output 类型，处理代码块和格式化文本
             if (Array.isArray(line.content)) {
               return (
-                <div key={index}>
+                <div key={index} className="mb-2">
                   {line.content.map((c, i) => {
                     // 图片标记
                     if (typeof c === 'string' && c.startsWith('__IMG:')) {
@@ -505,17 +505,7 @@ export default function Terminal({
                     }
 
                     // 隐藏文章装饰线（═ 和 ─ 开头的行）
-                    if (typeof c === 'string' && /^[ ═─]+$/.test(c) && c.length > 10) {
-                      return null;
-                    }
-
-                    // 文章标题开始标记 - 隐藏
-                    if (typeof c === 'string' && c === '__TITLE_START__') {
-                      return null;
-                    }
-
-                    // 文章标题结束标记 - 隐藏
-                    if (typeof c === 'string' && c === '__TITLE_END__') {
+                    if (typeof c === 'string' && /^[ ═─]+$/.test(c) && c.length > 5) {
                       return null;
                     }
 

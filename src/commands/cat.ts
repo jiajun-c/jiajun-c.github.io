@@ -129,16 +129,21 @@ export function renderMarkdown(content: string): { lines: string[]; images: Imag
     if (line.startsWith('### ')) {
       result.push('');
       result.push(`__H3__${line.slice(3)}__H3END__`);
+      result.push('');
     } else if (line.startsWith('## ')) {
       result.push('');
       result.push(`__H2__${line.slice(2)}__H2END__`);
+      result.push('');
     } else if (line.startsWith('# ')) {
       result.push('');
       result.push(`__H1__${line.slice(1).toUpperCase()}__H1END__`);
+      result.push('');
     }
     // 引用
     else if (line.startsWith('> ')) {
-      result.push(`  ▌ __ITALIC__:${line.slice(2)}:__ITALIC_END__`);
+      result.push('');
+      result.push(`  ▌ __ITALIC__${line.slice(2)}__ITALICEND__`);
+      result.push('');
     }
     // 列表
     else if (line.startsWith('- ') || line.startsWith('* ')) {
@@ -156,6 +161,7 @@ export function renderMarkdown(content: string): { lines: string[]; images: Imag
     // 普通段落
     else if (line.trim()) {
       result.push(`  ${line}`);
+      result.push('');
     } else {
       result.push('');
     }
@@ -201,16 +207,19 @@ const catHandler = (args: string[]): CommandResult => {
     };
   }
 
-  const output: string[] = [''];
+  const output: string[] = ['', ''];
 
   // 文章标题 - 使用特殊标记
-  output.push(`__TITLE_START__`);
-  output.push(`  ${post.title}`);
-  output.push(`__TITLE_END__`);
   output.push('');
-  output.push(`  Date: ${post.date}`);
-  output.push(`  Category: ${post.category}`);
-  output.push(`  Tags: ${post.tags.join(', ')}`);
+  output.push(`  ${post.title}`);
+  output.push('');
+  output.push('  ' + '─'.repeat(50));
+  output.push('');
+  output.push(`  📅 Date:      ${post.date}`);
+  output.push(`  📁 Category:  ${post.category}`);
+  output.push(`  🏷️  Tags:      ${post.tags.join(', ')}`);
+  output.push('');
+  output.push('  ' + '─'.repeat(50));
   output.push('');
 
   // 渲染内容
