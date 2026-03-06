@@ -42,7 +42,7 @@ export interface ImageInfo {
 export interface SelectableItem {
   value: string;
   label: string;
-  type: 'category' | 'article' | 'file';
+  type: 'category' | 'article' | 'file' | 'theme';
 }
 
 // 终端状态类型

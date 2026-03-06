@@ -5,6 +5,97 @@ import { AVAILABLE_COMMANDS, type CommandName } from '../../commands';
 import type { SelectableItem } from '../../types';
 import { setCurrentImages } from '../../commands/imgview';
 import { getCategories, getPostsByCategory } from '../../commands/ls';
+import { highlightCode } from '../../commands/cat';
+
+// 主题定义
+const themes = {
+  default: {
+    name: 'Default',
+    bg: 'from-gray-900 via-gray-950 to-gray-950',
+    primary: 'text-green-400',
+    secondary: 'text-cyan-400',
+    accent: 'text-purple-400',
+    promptSymbol: 'text-purple-400',
+    path: 'text-cyan-400',
+    arrow: 'text-green-400',
+    cursor: 'bg-emerald-400',
+    selection: 'bg-green-700',
+  },
+  matrix: {
+    name: 'Matrix',
+    bg: 'from-black via-gray-900 to-black',
+    primary: 'text-green-500',
+    secondary: 'text-green-300',
+    accent: 'text-green-400',
+    promptSymbol: 'text-green-400',
+    path: 'text-green-300',
+    arrow: 'text-green-500',
+    cursor: 'bg-green-400',
+    selection: 'bg-green-700',
+  },
+  sunset: {
+    name: 'Sunset',
+    bg: 'from-purple-900 via-pink-900 to-orange-900',
+    primary: 'text-orange-400',
+    secondary: 'text-pink-400',
+    accent: 'text-purple-400',
+    promptSymbol: 'text-pink-400',
+    path: 'text-orange-400',
+    arrow: 'text-purple-400',
+    cursor: 'bg-orange-400',
+    selection: 'bg-pink-700',
+  },
+  ocean: {
+    name: 'Ocean',
+    bg: 'from-blue-900 via-cyan-900 to-teal-900',
+    primary: 'text-cyan-400',
+    secondary: 'text-blue-400',
+    accent: 'text-teal-400',
+    promptSymbol: 'text-cyan-400',
+    path: 'text-blue-400',
+    arrow: 'text-teal-400',
+    cursor: 'bg-cyan-400',
+    selection: 'bg-cyan-700',
+  },
+  fire: {
+    name: 'Fire',
+    bg: 'from-red-900 via-orange-900 to-yellow-900',
+    primary: 'text-red-400',
+    secondary: 'text-orange-400',
+    accent: 'text-yellow-400',
+    promptSymbol: 'text-orange-400',
+    path: 'text-red-400',
+    arrow: 'text-yellow-400',
+    cursor: 'bg-red-400',
+    selection: 'bg-red-700',
+  },
+  cyberpunk: {
+    name: 'Cyberpunk',
+    bg: 'from-gray-900 via-purple-900 to-pink-900',
+    primary: 'text-yellow-400',
+    secondary: 'text-pink-400',
+    accent: 'text-cyan-400',
+    promptSymbol: 'text-pink-400',
+    path: 'text-yellow-400',
+    arrow: 'text-cyan-400',
+    cursor: 'bg-yellow-400',
+    selection: 'bg-pink-700',
+  },
+  monochrome: {
+    name: 'Monochrome',
+    bg: 'from-gray-800 via-gray-900 to-black',
+    primary: 'text-gray-300',
+    secondary: 'text-gray-400',
+    accent: 'text-white',
+    promptSymbol: 'text-gray-400',
+    path: 'text-gray-300',
+    arrow: 'text-white',
+    cursor: 'bg-gray-400',
+    selection: 'bg-gray-600',
+  },
+};
+
+type ThemeName = keyof typeof themes;
 
 interface TerminalLine {
   type: 'input' | 'output' | 'error' | 'info' | 'system';
@@ -28,6 +119,10 @@ export default function Terminal({
   username = 'guest',
   hostname = 'blog',
 }: TerminalProps) {
+  // 当前主题
+  const [currentTheme, setCurrentTheme] = useState<ThemeName>('default');
+  const theme = themes[currentTheme];
+
   const [lines, setLines] = useState<TerminalLine[]>([
     {
       type: 'system',
@@ -99,7 +194,7 @@ export default function Terminal({
               executeCommand(`cd ${selectedItem.value}`);
               setLines((prev) => [
                 ...prev,
-                { type: 'input', content: `cd ${selectedItem.value}`, path: `${username}@${hostname}:${getFullPath()}$` },
+                { type: 'input', content: `cd ${selectedItem.value}`, path: getPromptString() },
               ]);
               // 然后列出分类内容
               const lsResult = executeCommand('ls');
@@ -117,10 +212,25 @@ export default function Terminal({
               const catResult = executeCommand(`cat ${selectedItem.value}`);
               setLines((prev) => [
                 ...prev,
-                { type: 'input', content: `cat ${selectedItem.value}`, path: `${username}@${hostname}:${getFullPath()}$` },
+                { type: 'input', content: `cat ${selectedItem.value}`, path: getPromptString() },
                 {
                   type: catResult.type === 'error' ? 'error' : 'output',
                   content: catResult.output,
+                },
+              ]);
+            } else if (selectedItem.type === 'theme') {
+              // 切换主题
+              setCurrentTheme(selectedItem.value as ThemeName);
+              setLines((prev) => [
+                ...prev,
+                { type: 'input', content: `theme ${selectedItem.value}`, path: getPromptString() },
+                {
+                  type: 'success',
+                  content: [
+                    '',
+                    `  Theme switched to: ${selectedItem.label}`,
+                    '',
+                  ],
                 },
               ]);
             }
@@ -346,7 +456,7 @@ export default function Terminal({
   return (
     <div
       ref={terminalRef}
-      className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-950 to-gray-950 text-green-400 font-mono text-sm md:text-base p-4 md:p-6"
+      className={`min-h-screen bg-gradient-to-b ${theme.bg} text-${theme.primary.split('-')[1]}-400 font-mono text-sm md:text-base p-4 md:p-6 transition-colors duration-500`}
       onClick={() => inputRef.current?.focus()}
     >
       {/* 终端窗口 */}
@@ -371,27 +481,27 @@ export default function Terminal({
         </div>
 
         {/* 终端内容区域 */}
-        <div className="bg-gray-950/80 rounded-b-lg rounded-tr-lg p-4 md:p-6 shadow-2xl border border-gray-800/50">
-          <div className="space-y-1.5">
+        <div className={`bg-gray-950/80 rounded-b-lg rounded-tr-lg p-4 md:p-6 shadow-2xl border border-gray-800/50 transition-colors duration-500`}>
+          <div className="space-y-3">
           {lines.map((line, index) => {
 
             if (line.type === 'input') {
               return (
                 <div key={index} className="flex flex-wrap items-center">
-                  <span className="text-purple-400 font-bold mr-2">❯</span>
-                  <span className="text-cyan-400 font-bold whitespace-nowrap mr-2">
+                  <span className={`${theme.promptSymbol} font-bold mr-2`}>❯</span>
+                  <span className={`${theme.path} font-bold whitespace-nowrap mr-2`}>
                     {typeof line.path === 'string' ? line.path.replace(/❯ /, '').replace(/ \| ⟠/, '') || '~' : line.path}
                   </span>
                   <span className="text-gray-500 mr-2">│</span>
-                  <span className="text-green-400 font-bold mr-2">⟠</span>
-                  <span className="text-green-300">{line.content}</span>
+                  <span className={`${theme.arrow} font-bold mr-2`}>⟠</span>
+                  <span className={theme.primary}>{line.content}</span>
                 </div>
               );
             }
 
             if (line.type === 'system') {
               return (
-                <div key={index} className="text-cyan-400">
+                <div key={index} className={theme.secondary}>
                   {Array.isArray(line.content)
                     ? line.content.map((c, i) => <div key={i}>{c}</div>)
                     : line.content}
@@ -411,7 +521,7 @@ export default function Terminal({
 
             if (line.type === 'info') {
               return (
-                <div key={index} className="text-yellow-400">
+                <div key={index} className={theme.accent}>
                   {Array.isArray(line.content)
                     ? line.content.map((c, i) => <div key={i}>{c}</div>)
                     : line.content}
@@ -421,9 +531,43 @@ export default function Terminal({
 
             // output 类型，处理代码块和格式化文本
             if (Array.isArray(line.content)) {
+              // 代码块状态
+              let inCodeBlock = false;
+              let codeBlockLang = '';
+              const codeBlockLines: string[] = [];
+
               return (
-                <div key={index} className="mb-2">
+                <div key={index} className="mb-3">
                   {line.content.map((c, i) => {
+                    // 代码块开始标记 ```lang
+                    if (typeof c === 'string' && c.startsWith('```')) {
+                      if (!inCodeBlock) {
+                        inCodeBlock = true;
+                        codeBlockLang = c.slice(3).trim();
+                        codeBlockLines.length = 0;
+                        return null;
+                      } else {
+                        inCodeBlock = false;
+                        return (
+                          <div key={i} className="mt-2 mb-2 rounded-md overflow-hidden border border-gray-700">
+                            <div className="bg-gray-800/80 px-3 py-1.5 text-xs font-mono text-cyan-400 border-b border-gray-700">
+                              {codeBlockLang || 'code'}
+                            </div>
+                            <div className="bg-gray-900 px-4 py-3 overflow-x-auto">
+                              <pre className={`font-mono text-xs leading-relaxed ${theme.primary}`}>
+                                <code dangerouslySetInnerHTML={{ __html: highlightCode(codeBlockLines.join('\n'), codeBlockLang) }} />
+                              </pre>
+                            </div>
+                          </div>
+                        );
+                      }
+                    }
+
+                    if (inCodeBlock) {
+                      codeBlockLines.push(c);
+                      return null;
+                    }
+
                     // 图片标记
                     if (typeof c === 'string' && c.startsWith('__IMG:')) {
                       const content = c.slice(6);
@@ -454,56 +598,6 @@ export default function Terminal({
                       }
                     }
 
-                    // 代码块开始（上边框）- 隐藏显示
-                    if (typeof c === 'string' && c.startsWith('  ┌─') && c.includes('┐')) {
-                      return null;
-                    }
-
-                    // 代码块语言标题 - 使用更简洁的样式
-                    if (typeof c === 'string' && c.startsWith('  │') && c.includes('Code:')) {
-                      const langMatch = c.match(/Code:\s*(\w+)/);
-                      const lang = langMatch ? langMatch[1] : 'code';
-                      return (
-                        <div key={i} className="text-cyan-400 font-mono text-xs bg-gray-800/80 px-3 py-1.5 rounded-t-md border-b border-gray-700">
-                          {lang}
-                        </div>
-                      );
-                    }
-
-                    // 代码块分隔线 - 隐藏显示
-                    if (typeof c === 'string' && c.startsWith('  ├─') && c.includes('┤')) {
-                      return null;
-                    }
-
-                    // 代码块内容行（带 │ 边框）
-                    if (typeof c === 'string' && c.startsWith('  │ ') && c.endsWith('│') && !c.includes('Code:')) {
-                      const codeContent = c.slice(3, -1);
-                      // 跳过空的边框行
-                      if (!codeContent.trim()) {
-                        return null;
-                      }
-                      // 如果包含 HTML 标签，使用 dangerouslySetInnerHTML
-                      if (codeContent.includes('<span')) {
-                        return (
-                          <div
-                            key={i}
-                            className="font-mono text-xs bg-gray-900 px-3 py-0.5"
-                            dangerouslySetInnerHTML={{ __html: codeContent.trimEnd() }}
-                          />
-                        );
-                      }
-                      return (
-                        <div key={i} className="text-green-300 font-mono text-xs bg-gray-900 px-3 py-0.5">
-                          {codeContent.trimEnd()}
-                        </div>
-                      );
-                    }
-
-                    // 代码块结束（下边框）- 隐藏显示
-                    if (typeof c === 'string' && c.startsWith('  └─') && c.includes('┘')) {
-                      return null;
-                    }
-
                     // 隐藏文章装饰线（═ 和 ─ 开头的行）
                     if (typeof c === 'string' && /^[ ═─]+$/.test(c) && c.length > 5) {
                       return null;
@@ -523,7 +617,7 @@ export default function Terminal({
 
                         if (matchingIndex !== -1) {
                           if (matchingIndex === selectedIndex) {
-                            itemClass = 'bg-green-700 text-white ';
+                            itemClass = `${theme.selection} text-white `;
                             displayContent = `> ${c.trim()} `;
                           } else {
                             displayContent = `  ${c.trim()}`;
@@ -616,14 +710,14 @@ export default function Terminal({
           {/* 当前输入行 */}
           <div className="flex flex-wrap items-center gap-3 mt-6 pt-4 border-t border-gray-700/60">
             <span className="flex items-center gap-2">
-              <span className="text-purple-400 font-bold">❯</span>
-              <span className="text-cyan-400 font-bold">{getFullPath() || '~'}</span>
+              <span className={`${theme.promptSymbol} font-bold`}>❯</span>
+              <span className={`${theme.path} font-bold`}>{getFullPath() || '~'}</span>
               <span className="text-gray-500">│</span>
-              <span className="text-green-400 font-bold">⟠</span>
+              <span className={`${theme.arrow} font-bold`}>⟠</span>
             </span>
-            <span className="text-green-300 flex items-center bg-gray-900/70 px-3 py-1.5 rounded-md border border-gray-700/50 shadow-inner min-w-[200px]">
+            <span className={`${theme.primary} flex items-center bg-gray-900/70 px-3 py-1.5 rounded-md border border-gray-700/50 shadow-inner min-w-[200px]`}>
               {isSelecting ? (
-                <span className="text-yellow-400">
+                <span className={theme.accent}>
                   {selectedIndex >= 0 && selectableItems[selectedIndex]
                     ? `${selectableItems[selectedIndex].value} (press Enter to open, Esc to cancel)`
                     : '(press Esc to cancel)'}
@@ -632,10 +726,10 @@ export default function Terminal({
                 <>
                   {inputValue}
                   <span
-                    className={`inline-block w-3 h-5 bg-emerald-400 ml-1 rounded-sm ${
+                    className={`inline-block w-3 h-5 ${theme.cursor} ml-1 rounded-sm ${
                       isCursorVisible ? 'opacity-100' : 'opacity-0'
                     }`}
-                    style={{ boxShadow: '0 0 8px rgba(52, 211, 153, 0.6)' }}
+                    style={{ boxShadow: `0 0 8px rgba(${currentTheme === 'fire' ? '248, 113, 113' : currentTheme === 'sunset' ? '251, 113, 133' : currentTheme === 'cyberpunk' ? '250, 204, 21' : '52, 211, 153'}, 0.6)` }}
                   ></span>
                 </>
               )}

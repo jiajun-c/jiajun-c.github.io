@@ -128,13 +128,16 @@ export function renderMarkdown(content: string): { lines: string[]; images: Imag
     // 标题
     if (line.startsWith('### ')) {
       result.push('');
+      result.push('');
       result.push(`__H3__${line.slice(3)}__H3END__`);
       result.push('');
     } else if (line.startsWith('## ')) {
       result.push('');
+      result.push('');
       result.push(`__H2__${line.slice(2)}__H2END__`);
       result.push('');
     } else if (line.startsWith('# ')) {
+      result.push('');
       result.push('');
       result.push(`__H1__${line.slice(1).toUpperCase()}__H1END__`);
       result.push('');
@@ -237,31 +240,16 @@ const catHandler = (args: string[]): CommandResult => {
       codeBlockLang = line.replace('__CODEBLOCK_START:', '').replace('__', '');
       codeBlockLines = [];
     } else if (line === '__CODEBLOCK_END__') {
-      // 结束代码块 - 输出带边框的代码块
+      // 结束代码块
       inCodeBlock = false;
-      const boxWidth = 70; // 总宽度
-      const codeLabel = ` Code: ${codeBlockLang || 'plaintext'} `;
-      const contentWidth = boxWidth - 4; // 减去边框字符
-
       output.push('');
-      output.push(`  ┌${'─'.repeat(boxWidth)}┐`);
-      output.push(`  │${codeLabel}${'─'.repeat(contentWidth - codeLabel.length)}│`);
-      output.push(`  ├${'─'.repeat(boxWidth)}┤`);
+      output.push('```' + codeBlockLang);
       // 输出代码内容（带高亮）
       const highlighted = highlightCode(codeBlockLines.join('\n'), codeBlockLang);
       highlighted.split('\n').forEach((codeLine) => {
-        // 如果代码行为空，显示空格
-        if (!codeLine.trim()) {
-          output.push(`  │${' '.repeat(boxWidth)}│`);
-        } else {
-          // 截取过长的内容
-          const truncated = codeLine.length > contentWidth
-            ? codeLine.slice(0, contentWidth)
-            : codeLine + ' '.repeat(contentWidth - codeLine.length);
-          output.push(`  │ ${truncated}│`);
-        }
+        output.push(codeLine);
       });
-      output.push(`  └${'─'.repeat(boxWidth)}┘`);
+      output.push('```');
       output.push('');
     } else if (inCodeBlock) {
       // 收集代码块内容
