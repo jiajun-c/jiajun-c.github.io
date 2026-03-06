@@ -3,24 +3,26 @@ import { registerCommand } from './index';
 
 const matrixHandler = (): CommandResult => {
   // 生成黑客帝国风格的字符雨
-  const katakana = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂｵﾘｱﾎﾃﾏｹﾒｴｶｷﾑﾕﾗｾﾈｽﾀﾇﾍ';
+  const chars = '01XYZ ﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂｵﾘｱﾎﾃﾏｹﾒｴｶｷﾑﾕﾗｾﾈｽﾀﾇﾍ';
 
-  const width = 40;
-  const height = 15;
+  const width = 50;
+  const height = 20;
   const lines: string[] = [''];
 
+  // 生成多列字符雨
   for (let i = 0; i < height; i++) {
     let line = '  ';
     for (let j = 0; j < width; j++) {
-      const char = katakana[Math.floor(Math.random() * katakana.length)];
-      // 随机使用不同亮度的绿色
+      const char = chars[Math.floor(Math.random() * chars.length)];
       line += char;
     }
     lines.push(line);
   }
 
   lines.push('');
-  lines.push('  Follow the white rabbit...');
+  lines.push('  Wake up, Neo...');
+  lines.push('  The Matrix has you...');
+  lines.push('  Follow the white rabbit.');
   lines.push('');
 
   return {

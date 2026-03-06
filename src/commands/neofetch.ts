@@ -2,39 +2,39 @@ import type { CommandResult } from '../types';
 import { registerCommand } from './index';
 
 const neofetchHandler = (): CommandResult => {
+  // 使用简单的 ASCII 字符画代替 Unicode
   const asciiArt = [
-    '       ███╗   ██╗███████╗██╗  ██╗',
-    '       ████╗  ██║██╔════╝██║  ██║',
-    '       ██╔██╗ ██║█████╗  ███████║',
-    '       ██║╚██╗██║██╔══╝  ╚════██║',
-    '       ██║ ╚████║███████╗     ██║',
-    '       ╚═╝  ╚═══╝╚══════╝     ╚═╝',
+    '       /\\',
+    '      /  \\',
+    '     / /\\ \\',
+    '    / ____ \\',
+    '   /_/    \\_\\',
+    '  TERMINAL BLOG',
   ];
 
   const info = [
     '',
-    `${'█'.repeat(50)}`,
+    '----------------------------------------',
     '',
   ];
 
   // 系统信息
   const systemInfo = [
-    `  ${'█'.repeat(2)}  OS: Terminal Blog v1.0.0`,
-    `  ${'█'.repeat(2)}  Shell: React Terminal`,
-    `  ${'█'.repeat(2)}  Resolution: ${typeof window !== 'undefined' ? `${window.screen.width}x${window.screen.height}` : 'N/A'}`,
-    `  ${'█'.repeat(2)}  Theme: Default (Green Matrix)`,
-    `  ${'█'.repeat(2)}  CPU: Virtual Core`,
-    `  ${'█'.repeat(2)}  Memory: N/A`,
-    `  ${'█'.repeat(2)}  User: Guest`,
-    `  ${'█'.repeat(2)}  Uptime: Since page load`,
+    '  OS:        Terminal Blog v1.0.0',
+    '  Shell:     React Terminal',
+    '  Theme:     Default (Green Matrix)',
+    '  Resolution: Client-side only',
+    '  User:      Guest',
     '',
   ];
 
-  // 颜色条
+  // 颜色条使用文字描述
   const colors = [
-    `  ${'█'.repeat(8)}`,
-    '  ████ ████ ████ ████ ████ ████ ████ ████',
-    '  \x1b[30m█\x1b[0m \x1b[31m█\x1b[0m \x1b[32m█\x1b[0m \x1b[33m█\x1b[0m \x1b[34m█\x1b[0m \x1b[35m█\x1b[0m \x1b[36m█\x1b[0m \x1b[37m█\x1b[0m',
+    '  Colors:',
+    '  [0] Black   [4] Blue',
+    '  [1] Red     [5] Purple',
+    '  [2] Green   [6] Cyan',
+    '  [3] Yellow  [7] White',
     '',
   ];
 

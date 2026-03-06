@@ -48,6 +48,7 @@ export default function Terminal({
   const [isSelecting, setIsSelecting] = useState(false);
   const [selectableItems, setSelectableItems] = useState<SelectableItem[]>([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [selectingLineIndex, setSelectingLineIndex] = useState(-1);
 
   const inputRef = useRef<HTMLInputElement>(null);
   const terminalRef = useRef<HTMLDivElement>(null);
@@ -126,6 +127,7 @@ export default function Terminal({
           }
           setIsSelecting(false);
           setSelectableItems([]);
+          setSelectingLineIndex(-1);
           setSelectedIndex(0);
           setInputValue('');
           return;
@@ -133,6 +135,7 @@ export default function Terminal({
           e.preventDefault();
           setIsSelecting(false);
           setSelectableItems([]);
+          setSelectingLineIndex(-1);
           setSelectedIndex(0);
           setInputValue('');
           return;
@@ -140,12 +143,13 @@ export default function Terminal({
       }
 
       if (e.key === 'ArrowUp') {
-        // 如果有可选择的项目，进入选择模式
+        // 如果有可选择的项目，进入选择模式（只检查最后一行）
         const lastLine = lines[lines.length - 1];
         if (lastLine?.selectableItems && lastLine.selectableItems.length > 0) {
           e.preventDefault();
           setIsSelecting(true);
           setSelectableItems(lastLine.selectableItems);
+          setSelectingLineIndex(lines.length - 1);
           setSelectedIndex(0);
           return;
         }
@@ -517,11 +521,11 @@ export default function Terminal({
 
                     // 解析格式化标记
                     if (typeof c === 'string') {
-                      // 检查是否是可选择列表中的项
+                      // 检查是否是可选择列表中的项（只高亮当前选择的行）
                       let displayContent = c;
                       let itemClass = '';
 
-                      if (isSelecting && line.selectableItems) {
+                      if (isSelecting && line.selectableItems && index === selectingLineIndex) {
                         const trimmed = c.trim().replace(/\/$/, '').replace(/\.md$/, '');
                         const matchingIndex = line.selectableItems.findIndex(
                           (item) => item.value === trimmed

@@ -1,73 +1,105 @@
-import type { CommandResult } from '../types';
+import type { CommandResult, SelectableItem } from '../types';
 import { registerCommand } from './index';
 
 // 可用的主题列表
-const themes = {
-  default: {
-    name: 'Default',
-    primary: 'text-green-400',
-    secondary: 'text-cyan-400',
-    accent: 'text-purple-400',
-    bg: 'from-gray-900 via-gray-950 to-gray-950',
+const themes = [
+  {
+    name: 'default',
+    displayName: 'Default',
+    primary: '█',
+    secondary: '█',
+    accent: '█',
+    primaryColor: 'text-green-400',
+    secondaryColor: 'text-cyan-400',
+    accentColor: 'text-purple-400',
+    description: 'Classic green terminal',
   },
-  matrix: {
-    name: 'Matrix',
-    primary: 'text-green-500',
-    secondary: 'text-green-300',
-    accent: 'text-green-400',
-    bg: 'from-black via-gray-900 to-black',
+  {
+    name: 'matrix',
+    displayName: 'Matrix',
+    primary: '█',
+    secondary: '█',
+    accent: '█',
+    primaryColor: 'text-green-500',
+    secondaryColor: 'text-green-300',
+    accentColor: 'text-green-400',
+    description: 'Matrix green aesthetic',
   },
-  sunset: {
-    name: 'Sunset',
-    primary: 'text-orange-400',
-    secondary: 'text-pink-400',
-    accent: 'text-purple-400',
-    bg: 'from-purple-900 via-pink-900 to-orange-900',
+  {
+    name: 'sunset',
+    displayName: 'Sunset',
+    primary: '█',
+    secondary: '█',
+    accent: '█',
+    primaryColor: 'text-orange-400',
+    secondaryColor: 'text-pink-400',
+    accentColor: 'text-purple-400',
+    description: 'Warm sunset colors',
   },
-  ocean: {
-    name: 'Ocean',
-    primary: 'text-cyan-400',
-    secondary: 'text-blue-400',
-    accent: 'text-teal-400',
-    bg: 'from-blue-900 via-cyan-900 to-teal-900',
+  {
+    name: 'ocean',
+    displayName: 'Ocean',
+    primary: '█',
+    secondary: '█',
+    accent: '█',
+    primaryColor: 'text-cyan-400',
+    secondaryColor: 'text-blue-400',
+    accentColor: 'text-teal-400',
+    description: 'Cool ocean blues',
   },
-  fire: {
-    name: 'Fire',
-    primary: 'text-red-400',
-    secondary: 'text-orange-400',
-    accent: 'text-yellow-400',
-    bg: 'from-red-900 via-orange-900 to-yellow-900',
+  {
+    name: 'fire',
+    displayName: 'Fire',
+    primary: '█',
+    secondary: '█',
+    accent: '█',
+    primaryColor: 'text-red-400',
+    secondaryColor: 'text-orange-400',
+    accentColor: 'text-yellow-400',
+    description: 'Hot fire colors',
   },
-  cyberpunk: {
-    name: 'Cyberpunk',
-    primary: 'text-yellow-400',
-    secondary: 'text-pink-400',
-    accent: 'text-cyan-400',
-    bg: 'from-gray-900 via-purple-900 to-pink-900',
+  {
+    name: 'cyberpunk',
+    displayName: 'Cyberpunk',
+    primary: '█',
+    secondary: '█',
+    accent: '█',
+    primaryColor: 'text-yellow-400',
+    secondaryColor: 'text-pink-400',
+    accentColor: 'text-cyan-400',
+    description: 'Neon cyberpunk style',
   },
-  monochrome: {
-    name: 'Monochrome',
-    primary: 'text-gray-300',
-    secondary: 'text-gray-400',
-    accent: 'text-white',
-    bg: 'from-gray-800 via-gray-900 to-black',
+  {
+    name: 'monochrome',
+    displayName: 'Monochrome',
+    primary: '█',
+    secondary: '█',
+    accent: '█',
+    primaryColor: 'text-gray-300',
+    secondaryColor: 'text-gray-400',
+    accentColor: 'text-white',
+    description: 'Clean grayscale',
   },
-} as const;
-
-type ThemeName = keyof typeof themes;
+];
 
 const themeHandler = (args: string[]): CommandResult => {
   if (args.length === 0) {
-    // 显示所有可用主题
+    // 显示所有可用主题，带可选择项目
     const output = [
       '',
-      'Available themes:',
+      'Available themes (use ↑/↓ to select, Enter to preview):',
       '',
     ];
 
-    (Object.keys(themes) as ThemeName[]).forEach((themeName) => {
-      const theme = themes[themeName];
-      output.push(`  ${themeName.padEnd(12)} - ${theme.name}`);
+    const selectableItems: SelectableItem[] = [];
+
+    themes.forEach((theme) => {
+      output.push(`  ${theme.name.padEnd(12)} - ${theme.displayName}`);
+      selectableItems.push({
+        type: 'theme',
+        value: theme.name,
+        label: theme.displayName,
+      });
     });
 
     output.push('');
@@ -77,30 +109,32 @@ const themeHandler = (args: string[]): CommandResult => {
     return {
       type: 'info',
       output,
+      selectableItems,
     };
   }
 
   const [themeName] = args;
 
-  if (themeName && themeName in themes) {
-    // 这里只是预览主题，实际主题切换需要在 Terminal 组件中实现
-    const theme = themes[themeName as ThemeName];
+  if (themeName) {
+    const theme = themes.find((t) => t.name === themeName);
 
-    return {
-      type: 'success',
-      output: [
-        '',
-        `Theme "${theme.name}" preview:`,
-        '',
-        `  Primary color:   ████ ${theme.primary}`,
-        `  Secondary color: ████ ${theme.secondary}`,
-        `  Accent color:    ████ ${theme.accent}`,
-        `  Background:      ████ ${theme.bg}`,
-        '',
-        'Note: Theme switching will be available in future updates.',
-        '',
-      ],
-    };
+    if (theme) {
+      return {
+        type: 'success',
+        output: [
+          '',
+          `Theme: ${theme.displayName}`,
+          '',
+          `  ${theme.description}`,
+          '',
+          '  Color Preview:',
+          `    Primary:   ${theme.primaryColor.replace('text-', '')}`,
+          `    Secondary: ${theme.secondaryColor.replace('text-', '')}`,
+          `    Accent:    ${theme.accentColor.replace('text-', '')}`,
+          '',
+        ],
+      };
+    }
   }
 
   return {
@@ -108,7 +142,7 @@ const themeHandler = (args: string[]): CommandResult => {
     output: [
       '',
       `Unknown theme: ${themeName}`,
-      'Available themes: ' + Object.keys(themes).join(', '),
+      'Available themes: ' + themes.map((t) => t.name).join(', '),
       '',
     ],
   };
