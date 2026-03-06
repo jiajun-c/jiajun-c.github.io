@@ -225,7 +225,7 @@ export default function Terminal({
                 ...prev,
                 { type: 'input', content: `theme ${selectedItem.value}`, path: getPromptString() },
                 {
-                  type: 'success',
+                  type: 'info',
                   content: [
                     '',
                     `  Theme switched to: ${selectedItem.label}`,
@@ -437,21 +437,6 @@ export default function Terminal({
     const path = getFullPath() || '~';
     return `❯ ${path} │ ⟠`;
   };
-
-  // 生成炫酷的提示符（JSX 版本，用于渲染）
-  const getPromptPath = () => {
-    const path = getFullPath();
-    return (
-      <span className="flex items-center gap-2">
-        <span className="text-purple-400 font-bold">❯</span>
-        <span className="text-cyan-400 font-bold">{path || '~'}</span>
-        <span className="text-gray-500">│</span>
-        <span className="text-green-400 font-bold">⟠</span>
-      </span>
-    );
-  };
-
-  const prompt = getPromptPath();
 
   return (
     <div
