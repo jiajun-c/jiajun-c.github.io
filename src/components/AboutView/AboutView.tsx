@@ -171,7 +171,7 @@ export default function AboutView() {
                       <p className="text-gray-400 mb-2">{item.degree}</p>
                       {item.details && (
                         <ul className="space-y-1">
-                          {item.details.map((detail: string, j) => (
+                          {item.details.map((detail: string, j: number) => (
                             <li key={j} className="text-gray-500 text-sm flex items-start gap-2">
                               <span className="text-purple-400 mt-1">•</span>
                               {detail}
@@ -195,7 +195,7 @@ export default function AboutView() {
                       </div>
                       {item.details && (
                         <ul className="space-y-1 mt-2">
-                          {item.details.map((detail: string, j) => (
+                          {item.details.map((detail: string, j: number) => (
                             <li key={j} className="text-gray-400 text-sm flex items-start gap-2">
                               <span className="text-cyan-400 mt-1">•</span>
                               {detail}
@@ -236,7 +236,7 @@ export default function AboutView() {
                       <h3 className="text-lg font-bold text-cyan-400 mb-2">{item.name}</h3>
                       {item.details && (
                         <ul className="space-y-1">
-                          {item.details.map((detail: string, j) => (
+                          {item.details.map((detail: string, j: number) => (
                             <li key={j} className="text-gray-400 text-sm flex items-start gap-2">
                               <span className="text-pink-400 mt-1">•</span>
                               {detail}

@@ -15,6 +15,7 @@ export const AVAILABLE_COMMANDS = [
   'neofetch',
   'matrix',
   'clock',
+  'about',
 ] as const;
 
 export type CommandName = typeof AVAILABLE_COMMANDS[number];
