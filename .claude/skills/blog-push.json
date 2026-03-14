@@ -1,0 +1,6 @@
+{
+  "name": "blog-push",
+  "description": "自动部署博客到 GitHub Pages",
+  "tools": ["Bash"],
+  "instructions": "执行以下命令自动部署博客到 GitHub Pages:\n\n1. cd /home/star/workspace/kota-home/terminal-blog\n2. git add -A\n3. git commit -m \"chore: auto deploy blog update\"\n4. git push origin main\n\n如果 git add 后没有变化，提示用户没有需要部署的更改。\n如果推送失败，检查错误信息并报告给用户。"
+}

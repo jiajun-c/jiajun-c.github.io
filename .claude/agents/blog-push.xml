@@ -1,0 +1,16 @@
+<skill>
+<name>blog-push</name>
+<description>自动部署博客到 GitHub Pages</description>
+<instructions>
+当用户输入 /blog-push 时，执行以下步骤：
+
+1. 进入项目目录：cd /home/star/workspace/kota-home/terminal-blog
+2. 添加所有更改：git add -A
+3. 检查是否有更改，如果没有则提示用户
+4. 提交更改：git commit -m "chore: auto deploy blog update"
+5. 推送到 GitHub：git push origin main
+6. 提示用户部署完成
+
+确保在推送前检查 git 状态，避免空提交。
+</instructions>
+</skill>
