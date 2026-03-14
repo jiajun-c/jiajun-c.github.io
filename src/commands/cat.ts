@@ -61,20 +61,25 @@ export function renderMarkdown(content: string): { lines: string[]; images: Imag
   // 图片正则表达式
   const imageRegex = /!\[([^\]]*)\]\(([^)]+)\)/;
 
-  // 行内代码正则
-  const inlineCodeRegex = /`([^`]+)`/g;
-
-  // 粗体正则
-  const boldRegex = /\*\*([^*]+)\*\*/g;
-
-  // 斜体正则
-  const italicRegex = /\*([^*]+)\*/g;
-
   // 表格行正则
   const tableRowRegex = /^\|(.+)\|$/;
 
   // 表格分隔行正则
   const tableSeparatorRegex = /^\|[\s\-:|]+\|$/;
+
+  // 处理行内格式的函数 - 避免重复替换问题
+  function processInlineFormat(text: string): string {
+    // 先处理行内代码（用特殊标记包裹）
+    text = text.replace(/`([^`]+)`/g, '__INLINE_CODE_START__$1__INLINE_CODE_END__');
+
+    // 处理粗体
+    text = text.replace(/\*\*([^*]+)\*\*/g, '__BOLD__$1__BOLDEND__');
+
+    // 处理斜体
+    text = text.replace(/\*([^*]+)\*/g, '__ITALIC__$1__ITALICEND__');
+
+    return text;
+  }
 
   for (let i = 0; i < lines.length; i++) {
     let line = lines[i];
@@ -166,10 +171,8 @@ export function renderMarkdown(content: string): { lines: string[]; images: Imag
     // 如果行内有图片但不是独占一行，替换为文字说明
     line = line.replace(imageRegex, '[🖼️ ' + (match ? match[1] || 'image' : 'image') + ']');
 
-    // 处理行内格式化
-    line = line.replace(boldRegex, '__BOLD__$1__BOLDEND__');
-    line = line.replace(italicRegex, '__ITALIC__$1__ITALICEND__');
-    line = line.replace(inlineCodeRegex, '__CODE__$1__CODEEND__');
+    // 处理行内格式化 - 使用新函数
+    line = processInlineFormat(line);
 
     // 标题
     if (line.startsWith('### ')) {

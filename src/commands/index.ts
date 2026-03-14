@@ -10,7 +10,6 @@ export const AVAILABLE_COMMANDS = [
   'clear',
   'search',
   'history',
-  'imgview',
   'theme',
   'neofetch',
   'matrix',

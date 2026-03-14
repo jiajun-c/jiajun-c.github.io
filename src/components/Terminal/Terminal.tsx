@@ -3,7 +3,6 @@ import { executeCommand } from '../../utils/commandParser';
 import { getFullPath, getCurrentPath } from '../../commands/cd';
 import { AVAILABLE_COMMANDS, type CommandName } from '../../commands';
 import type { SelectableItem } from '../../types';
-import { setCurrentImages } from '../../commands/imgview';
 import { getCategories, getPostsByCategory } from '../../commands/ls';
 import { highlightCode } from '../../commands/cat';
 import { startMatrixRain } from '../../commands/matrix';
@@ -394,11 +393,6 @@ export default function Terminal({
             { type: 'input', content: command, path: prompt },
           ]);
 
-          // 如果有图片，设置当前图片
-          if (result.images && result.images.length > 0) {
-            setCurrentImages(result.images.map(img => ({ alt: img.alt, src: img.src })));
-          }
-
           // 处理清屏
           if (result.output.some((o: string) => o === '__CLEAR__')) {
             setLines([
@@ -719,7 +713,7 @@ export default function Terminal({
                         }
                       }
 
-                      const parts = displayContent.split(/(__BOLD__|__BOLDEND__|__ITALIC__|__ITALICEND__|__CODE__|__CODEEND__|__H1__|__H1END__|__H2__|__H2END__|__H3__|__H3END__)/);
+                      const parts = displayContent.split(/(__BOLD__|__BOLDEND__|__ITALIC__|__ITALICEND__|__INLINE_CODE_START__|__INLINE_CODE_END__|__H1__|__H1END__|__H2__|__H2END__|__H3__|__H3END__)/);
                       let inBold = false;
                       let inItalic = false;
                       let inCode = false;
@@ -738,10 +732,10 @@ export default function Terminal({
                         } else if (part === '__ITALICEND__') {
                           inItalic = false;
                           return null;
-                        } else if (part === '__CODE__') {
+                        } else if (part === '__INLINE_CODE_START__') {
                           inCode = true;
                           return null;
-                        } else if (part === '__CODEEND__') {
+                        } else if (part === '__INLINE_CODE_END__') {
                           inCode = false;
                           return null;
                         } else if (part === '__H1__') {
