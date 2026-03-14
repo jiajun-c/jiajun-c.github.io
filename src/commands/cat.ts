@@ -54,6 +54,10 @@ export function renderMarkdown(content: string): { lines: string[]; images: Imag
   let codeBlockContent: string[] = [];
   let codeBlockLanguage = '';
 
+  // 表格状态
+  let inTable = false;
+  let tableRows: string[][] = [];
+
   // 图片正则表达式
   const imageRegex = /!\[([^\]]*)\]\(([^)]+)\)/;
 
@@ -66,11 +70,24 @@ export function renderMarkdown(content: string): { lines: string[]; images: Imag
   // 斜体正则
   const italicRegex = /\*([^*]+)\*/g;
 
+  // 表格行正则
+  const tableRowRegex = /^\|(.+)\|$/;
+
+  // 表格分隔行正则
+  const tableSeparatorRegex = /^\|[\s\-:|]+\|$/;
+
   for (let i = 0; i < lines.length; i++) {
     let line = lines[i];
 
     // 处理代码块
     if (line.startsWith('```')) {
+      // 如果在表格内，先结束表格
+      if (inTable) {
+        inTable = false;
+        // 渲染表格
+        renderTable(tableRows, result);
+        tableRows = [];
+      }
       if (!inCodeBlock) {
         // 开始代码块
         inCodeBlock = true;
@@ -92,6 +109,35 @@ export function renderMarkdown(content: string): { lines: string[]; images: Imag
     if (inCodeBlock) {
       codeBlockContent.push(line);
       continue;
+    }
+
+    // 检查是否是表格行
+    const tableMatch = line.match(tableRowRegex);
+    if (tableMatch && !line.startsWith('>')) {
+      // 检查是否是分隔行
+      if (tableSeparatorRegex.test(line)) {
+        // 表格分隔行，不添加到结果
+        continue;
+      }
+      // 是表格内容行
+      const cells = line.split('|').filter((_c: string, i: number, arr: string[]) => {
+        // 过滤掉首尾空单元格
+        if (i === 0 || i === arr.length - 1) return false;
+        return true;
+      }).map((c: string) => c.trim());
+
+      if (cells.length > 0) {
+        inTable = true;
+        tableRows.push(cells);
+      }
+      continue;
+    }
+
+    // 如果之前在表格内但现在不是表格行了，结束表格
+    if (inTable) {
+      inTable = false;
+      renderTable(tableRows, result);
+      tableRows = [];
     }
 
     // 检查是否是纯图片行
@@ -170,7 +216,30 @@ export function renderMarkdown(content: string): { lines: string[]; images: Imag
     }
   }
 
+  // 处理未结束的表格
+  if (inTable) {
+    renderTable(tableRows, result);
+  }
+
   return { lines: result, images };
+}
+
+// 渲染表格为 HTML 格式
+function renderTable(rows: string[][], result: string[]): void {
+  if (rows.length === 0) return;
+
+  result.push(`__TABLE_START__`);
+  rows.forEach((row, idx) => {
+    if (idx === 0) {
+      // 表头
+      result.push(`__TABLE_HEADER__${JSON.stringify(row)}__TABLE_HEADER_END__`);
+    } else {
+      // 数据行
+      result.push(`__TABLE_ROW__${JSON.stringify(row)}__TABLE_ROW_END__`);
+    }
+  });
+  result.push(`__TABLE_END__`);
+  result.push('');
 }
 
 const catHandler = (args: string[]): CommandResult => {
@@ -210,71 +279,12 @@ const catHandler = (args: string[]): CommandResult => {
     };
   }
 
-  const output: string[] = ['', ''];
-
-  // 文章标题 - 使用特殊标记
-  output.push('');
-  output.push(`  ${post.title}`);
-  output.push('');
-  output.push('  ' + '─'.repeat(50));
-  output.push('');
-  output.push(`  📅 Date:      ${post.date}`);
-  output.push(`  📁 Category:  ${post.category}`);
-  output.push(`  🏷️  Tags:      ${post.tags.join(', ')}`);
-  output.push('');
-  output.push('  ' + '─'.repeat(50));
-  output.push('');
-
-  // 渲染内容
-  const { lines: renderedContent, images } = renderMarkdown(post.content);
-
-  // 处理渲染后的行，包括代码块和图片
-  let inCodeBlock = false;
-  let codeBlockLang = '';
-  let codeBlockLines: string[] = [];
-
-  for (const line of renderedContent) {
-    if (line.startsWith('__CODEBLOCK_START:')) {
-      // 开始代码块
-      inCodeBlock = true;
-      codeBlockLang = line.replace('__CODEBLOCK_START:', '').replace('__', '');
-      codeBlockLines = [];
-    } else if (line === '__CODEBLOCK_END__') {
-      // 结束代码块
-      inCodeBlock = false;
-      output.push('');
-      output.push('```' + codeBlockLang);
-      // 输出代码内容（带高亮）
-      const highlighted = highlightCode(codeBlockLines.join('\n'), codeBlockLang);
-      highlighted.split('\n').forEach((codeLine) => {
-        output.push(codeLine);
-      });
-      output.push('```');
-      output.push('');
-    } else if (inCodeBlock) {
-      // 收集代码块内容
-      codeBlockLines.push(line);
-    } else if (line.startsWith('__IMG:')) {
-      // 图片
-      const parts = line.match(/^__IMG:([^:]+):(.+)__$/);
-      if (parts) {
-        const src = parts[1];
-        const alt = parts[2];
-        output.push('');
-        output.push(`__IMG:${src}:${alt}__`);
-        output.push('');
-      }
-    } else {
-      output.push(line);
-    }
-  }
-
-  output.push('');
+  // 直接打开详情页
+  window.location.hash = `/article/${post.slug}`;
 
   return {
     type: 'success',
-    output,
-    images,
+    output: [`Opening article: ${post.title}...`],
   };
 };
 

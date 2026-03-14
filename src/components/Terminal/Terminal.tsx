@@ -6,6 +6,7 @@ import type { SelectableItem } from '../../types';
 import { setCurrentImages } from '../../commands/imgview';
 import { getCategories, getPostsByCategory } from '../../commands/ls';
 import { highlightCode } from '../../commands/cat';
+import { startMatrixRain } from '../../commands/matrix';
 
 // 主题定义
 const themes = {
@@ -120,7 +121,7 @@ export default function Terminal({
   hostname = 'blog',
 }: TerminalProps) {
   // 当前主题
-  const [currentTheme, setCurrentTheme] = useState<ThemeName>('default');
+  const [currentTheme, setCurrentTheme] = useState<ThemeName>('cyberpunk');
   const theme = themes[currentTheme];
 
   const [lines, setLines] = useState<TerminalLine[]>([
@@ -145,9 +146,22 @@ export default function Terminal({
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [selectingLineIndex, setSelectingLineIndex] = useState(-1);
 
+  // 复制代码块状态
+  const [copiedBlockId, setCopiedBlockId] = useState<string | null>(null);
+
   const inputRef = useRef<HTMLInputElement>(null);
   const terminalRef = useRef<HTMLDivElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
+
+  const copyToClipboard = async (text: string, blockId: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopiedBlockId(blockId);
+      setTimeout(() => setCopiedBlockId(null), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
 
   // 光标闪烁效果
   useEffect(() => {
@@ -208,16 +222,14 @@ export default function Terminal({
                 },
               ]);
             } else if (selectedItem.type === 'article' || selectedItem.type === 'file') {
-              // 查看文章
-              const catResult = executeCommand(`cat ${selectedItem.value}`);
-              setLines((prev) => [
-                ...prev,
-                { type: 'input', content: `cat ${selectedItem.value}`, path: getPromptString() },
-                {
-                  type: catResult.type === 'error' ? 'error' : 'output',
-                  content: catResult.output,
-                },
-              ]);
+              // 直接打开详情页
+              window.location.hash = `/article/${selectedItem.value}`;
+              setIsSelecting(false);
+              setSelectableItems([]);
+              setSelectingLineIndex(-1);
+              setSelectedIndex(0);
+              setInputValue('');
+              return;
             } else if (selectedItem.type === 'theme') {
               // 切换主题
               setCurrentTheme(selectedItem.value as ThemeName);
@@ -367,6 +379,11 @@ export default function Terminal({
           setCommandHistory((prev) => [...prev, command]);
           setHistoryIndex(-1);
 
+          // 特殊处理 matrix 命令 - 启动背景动画
+          if (command === 'matrix') {
+            startMatrixRain();
+          }
+
           // 执行命令
           const result = executeCommand(command);
 
@@ -453,10 +470,17 @@ export default function Terminal({
             <div className="w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-600 transition-colors shadow-lg"></div>
             <div className="w-3 h-3 rounded-full bg-green-500 hover:bg-green-600 transition-colors shadow-lg"></div>
           </div>
-          <div className="flex-1 text-center text-gray-400 text-xs md:text-sm font-medium">
-            <span className="opacity-75">{username}@{hostname}</span>
-            <span className="mx-2 opacity-50">|</span>
-            <span className="opacity-75">{getFullPath()}</span>
+          <div className="flex items-center gap-3 flex-1 justify-center">
+            {/* Arch Linux 图标 */}
+            <svg className="w-5 h-5 text-blue-400" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L2 22h20L12 2zm0 3.5L18.5 20h-13L12 5.5z"/>
+              <path d="M12 6L6 19h12L12 6zm0 2.5L14.5 17h-5L12 8.5z"/>
+            </svg>
+            <span className="text-gray-400 text-xs md:text-sm font-medium">
+              <span className="opacity-75">{username}@{hostname}</span>
+              <span className="mx-2 opacity-50">|</span>
+              <span className="opacity-75">{getFullPath()}</span>
+            </span>
           </div>
           <div className="text-gray-500 text-xs">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -533,14 +557,45 @@ export default function Terminal({
                         return null;
                       } else {
                         inCodeBlock = false;
+                        const codeContent = codeBlockLines.join('\n');
+                        const blockId = `${index}-${i}`;
+                        const isCopied = copiedBlockId === blockId;
                         return (
                           <div key={i} className="mt-2 mb-2 rounded-md overflow-hidden border border-gray-700">
-                            <div className="bg-gray-800/80 px-3 py-1.5 text-xs font-mono text-cyan-400 border-b border-gray-700">
-                              {codeBlockLang || 'code'}
+                            <div className="bg-gray-800/80 px-3 py-1.5 text-xs font-mono text-cyan-400 border-b border-gray-700 flex items-center justify-between">
+                              <span>{codeBlockLang || 'code'}</span>
+                              <button
+                                onClick={() => copyToClipboard(codeContent, blockId)}
+                                className={`flex items-center gap-1 px-2 py-0.5 rounded transition-all duration-200 ${
+                                  isCopied
+                                    ? 'text-green-400 bg-green-400/10'
+                                    : 'text-gray-400 hover:text-white hover:bg-gray-700/50'
+                                }`}
+                                title={isCopied ? '已复制' : '复制代码'}
+                              >
+                                {isCopied ? (
+                                  <>
+                                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span className="text-xs">已复制</span>
+                                  </>
+                                ) : (
+                                  <>
+                                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                    </svg>
+                                    <span className="text-xs">复制</span>
+                                  </>
+                                )}
+                              </button>
                             </div>
                             <div className="bg-gray-900 px-4 py-3 overflow-x-auto">
-                              <pre className={`font-mono text-xs leading-relaxed ${theme.primary}`}>
-                                <code dangerouslySetInnerHTML={{ __html: highlightCode(codeBlockLines.join('\n'), codeBlockLang) }} />
+                              <pre 
+                                className={`text-sm leading-relaxed ${theme.primary}`}
+                                style={{ fontFamily: "'IBM Plex Mono', 'BlexMono Nerd Font', 'JetBrains Mono', monospace", letterSpacing: '0.02em' }}
+                              >
+                                <code dangerouslySetInnerHTML={{ __html: highlightCode(codeContent, codeBlockLang) }} />
                               </pre>
                             </div>
                           </div>
@@ -586,6 +641,60 @@ export default function Terminal({
                     // 隐藏文章装饰线（═ 和 ─ 开头的行）
                     if (typeof c === 'string' && /^[ ═─]+$/.test(c) && c.length > 5) {
                       return null;
+                    }
+
+                    // 表格处理
+                    if (typeof c === 'string') {
+                      // 表格开始
+                      if (c === '__TABLE_START__') {
+                        return null;
+                      }
+                      // 表格结束
+                      if (c === '__TABLE_END__') {
+                        return null;
+                      }
+                      // 表头
+                      const headerMatch = c.match(/^__TABLE_HEADER__(\[[\s\S]*?\])__TABLE_HEADER_END__$/);
+                      if (headerMatch) {
+                        const headers = JSON.parse(headerMatch[1]) as string[];
+                        return (
+                          <div key={i} className="my-4 overflow-hidden rounded-lg border border-gray-700">
+                            <div className="grid" style={{ gridTemplateColumns: `repeat(${headers.length}, minmax(0, 1fr))` }}>
+                              <div className="contents">
+                                {headers.map((header, idx) => (
+                                  <div
+                                    key={idx}
+                                    className="px-4 py-3 bg-gradient-to-b from-purple-900/50 to-purple-800/30 text-purple-200 font-bold text-sm border-b border-gray-700 first:border-l-0 last:border-r-0 border-l border-r border-gray-700"
+                                  >
+                                    {header}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      }
+                      // 表格行
+                      const rowMatch = c.match(/^__TABLE_ROW__(\[[\s\S]*?\])__TABLE_ROW_END__$/);
+                      if (rowMatch) {
+                        const cells = JSON.parse(rowMatch[1]) as string[];
+                        return (
+                          <div className="grid" style={{ gridTemplateColumns: `repeat(${cells.length}, minmax(0, 1fr))` }}>
+                            <div className="contents">
+                              {cells.map((cell, idx) => (
+                                <div
+                                  key={idx}
+                                  className={`px-4 py-2.5 text-sm border-b border-gray-800 first:border-l-0 last:border-r-0 border-l border-r border-gray-700 ${
+                                    idx % 2 === 0 ? 'bg-gray-800/30' : 'bg-gray-800/10'
+                                  } text-gray-300 hover:bg-gray-700/50 transition-colors`}
+                                >
+                                  {cell}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        );
+                      }
                     }
 
                     // 解析格式化标记

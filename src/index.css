@@ -41,10 +41,48 @@
     }
   }
 
+  /* 文章排版样式 */
+  .article-content {
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+  }
+
+  .article-content p {
+    margin-bottom: 1.25em;
+  }
+
+  .article-content h1,
+  .article-content h2,
+  .article-content h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.75em;
+    line-height: 1.3;
+  }
+
+  .article-content ul,
+  .article-content ol {
+    margin: 0.75em 0;
+    padding-left: 1.5em;
+  }
+
+  .article-content li {
+    margin-bottom: 0.5em;
+  }
+
+  .article-content blockquote {
+    margin: 1em 0;
+    padding-left: 1em;
+    border-left: 3px solid #374151;
+  }
+
   /* 代码块样式 */
   .code-block {
-    @apply bg-gray-900 text-gray-100 p-4 rounded my-2 overflow-x-auto;
-    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+    @apply bg-gray-900 text-gray-100 p-4 rounded my-3 overflow-x-auto;
+    font-family: 'IBM Plex Mono', 'BlexMono Nerd Font', 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+    font-weight: 400;
   }
 
   /* 代码高亮样式 */
@@ -74,17 +112,44 @@
   .terminal-link {
     @apply text-blue-400 hover:text-blue-300 underline cursor-pointer;
   }
+
+  /* 复制按钮样式 */
+  .copy-button {
+    @apply absolute top-2 right-2 p-1.5 rounded bg-gray-700/50 hover:bg-gray-600/70 transition-all duration-200;
+    opacity: 0.7;
+  }
+
+  .copy-button:hover {
+    opacity: 1;
+  }
+
+  .copy-button:active {
+    transform: scale(0.95);
+  }
+
+  .copy-button.copied {
+    @apply bg-green-600/50;
+  }
 }
 
-/* 等宽字体 */
+/* 代码字体 */
 @font-face {
-  font-family: 'Fira Code';
+  font-family: 'BlexMono Nerd Font';
   font-display: swap;
-  src: local('Fira Code'), local('FiraCode-Regular');
+  font-weight: 400;
+  src: local('BlexMono Nerd Font'), local('BlexMono Nerd Font Mono'), local('IBM Plex Mono');
 }
 
 @font-face {
   font-family: 'JetBrains Mono';
   font-display: swap;
+  font-weight: 400;
   src: local('JetBrains Mono'), local('JetBrainsMono-Regular');
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  font-display: swap;
+  font-weight: 400;
+  src: local('Fira Code'), local('FiraCode-Regular');
 }

@@ -17,6 +17,7 @@ import './commands/theme'
 import './commands/neofetch'
 import './commands/matrix'
 import './commands/clock'
+import './commands/about'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
